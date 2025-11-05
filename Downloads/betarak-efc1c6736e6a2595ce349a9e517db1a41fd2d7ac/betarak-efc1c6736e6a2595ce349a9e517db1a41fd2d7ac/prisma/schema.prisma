@@ -1,0 +1,369 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        String   @id @default(cuid())
+  username  String   @unique
+  email     String   @unique
+  password  String
+  firstName String
+  lastName  String
+  role      String   @default("USER")
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  orders    Order[]
+
+  @@map("users")
+}
+
+model Product {
+  id            String           @id @default(cuid())
+  name          String
+  description   String
+  price         Int
+  originalPrice Int?
+  category      String
+  image         String?
+  rating        Float            @default(0)
+  reviews       Int              @default(0)
+  inStock       Boolean          @default(true)
+  features      String
+  tags          String
+  hasVariants   Boolean          @default(false)
+  createdAt     DateTime         @default(now())
+  updatedAt     DateTime         @updatedAt
+  cartItems     CartItem[]
+  orderItems    OrderItem[]
+  variants      ProductVariant[]
+
+  @@map("products")
+}
+
+model ProductVariant {
+  id            String      @id @default(cuid())
+  productId     String
+  name          String
+  price         Int
+  originalPrice Int?
+  isDefault     Boolean     @default(false)
+  sortOrder     Int         @default(0)
+  inStock       Boolean     @default(true)
+  createdAt     DateTime    @default(now())
+  updatedAt     DateTime    @updatedAt
+  cartItems     CartItem[]
+  orderItems    OrderItem[]
+  product       Product     @relation(fields: [productId], references: [id], onDelete: Cascade)
+
+  @@map("product_variants")
+}
+
+model Order {
+  id                  String      @id @default(cuid())
+  orderNumber         String      @unique
+  userId              String?
+  customerFirstName   String
+  customerLastName    String
+  customerEmail       String
+  customerPhone       String
+  customerCompany     String?
+  customerAddress     String
+  customerCity        String
+  customerState       String
+  customerPostalCode  String
+  paymentMethod       String
+  specialInstructions String?
+  totalAmount         BigInt
+  status              String      @default("PENDING_CONFIRMATION")
+  estimatedDelivery   String
+  trackingNumber      String?
+  createdAt           DateTime    @default(now())
+  updatedAt           DateTime    @updatedAt
+  orderItems          OrderItem[]
+  user                User?       @relation(fields: [userId], references: [id])
+
+  @@map("orders")
+}
+
+model OrderItem {
+  id               String          @id @default(cuid())
+  orderId          String
+  productId        String
+  productVariantId String?
+  name             String
+  variantName      String?
+  price            Int
+  quantity         Int
+  image            String
+  order            Order           @relation(fields: [orderId], references: [id], onDelete: Cascade)
+  product          Product         @relation(fields: [productId], references: [id])
+  productVariant   ProductVariant? @relation(fields: [productVariantId], references: [id])
+
+  @@map("order_items")
+}
+
+model CartItem {
+  id               String          @id @default(cuid())
+  sessionId        String
+  productId        String
+  productVariantId String?
+  quantity         Int
+  createdAt        DateTime        @default(now())
+  updatedAt        DateTime        @updatedAt
+  product          Product         @relation(fields: [productId], references: [id], onDelete: Cascade)
+  productVariant   ProductVariant? @relation(fields: [productVariantId], references: [id])
+
+  @@unique([sessionId, productId, productVariantId])
+  @@map("cart_items")
+}
+
+model Contact {
+  id          String   @id @default(cuid())
+  firstName   String
+  lastName    String
+  email       String
+  phone       String
+  company     String?
+  subject     String
+  message     String
+  inquiryType String
+  status      String   @default("NEW")
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@map("contacts")
+}
+
+model Notification {
+  id        String   @id @default(cuid())
+  type      String
+  title     String
+  message   String
+  data      String?
+  read      Boolean  @default(false)
+  userId    String?
+  createdAt DateTime @default(now())
+
+  @@map("notifications")
+}
+
+model Gallery {
+  id          String   @id @default(cuid())
+  title       String
+  description String?
+  category    String
+  image       String
+  images      String
+  status      String   @default("draft")
+  client      String?
+  location    String?
+  year        Int?
+  uploadDate  DateTime @default(now())
+  tags        String
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@map("gallery")
+}
+
+model Advertisement {
+  id          String    @id @default(cuid())
+  title       String
+  description String?
+  type        String
+  position    String
+  image       String?
+  link        String?
+  isActive    Boolean   @default(true)
+  startDate   DateTime  @default(now())
+  endDate     DateTime?
+  priority    Int       @default(0)
+  clickCount  Int       @default(0)
+  viewCount   Int       @default(0)
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+
+  @@map("advertisements")
+}
+
+model Category {
+  id          String   @id @default(cuid())
+  name        String   @unique
+  slug        String   @unique
+  description String?
+  isActive    Boolean  @default(true)
+  sortOrder   Int      @default(0)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@map("categories")
+}
+
+model WebsiteSettings {
+  id                    String   @id @default(cuid())
+  logoUrl               String   @default("/logo.jpg")
+  logoZoom              Int      @default(100)
+  logoHeaderUrl         String   @default("/logo.jpg")
+  logoHeaderZoom        Int      @default(100)
+  companyName           String   @default("Betarak")
+  companyDescription    String   @default("Betarak adalah penyedia solusi rak dan perlengkapan toko terlengkap di Indonesia. Kami berkomitmen memberikan produk berkualitas tinggi dengan pelayanan terbaik untuk mendukung kesuksesan bisnis Anda.")
+  address               String   @default("Jl. Industri Raya No. 123, Jakarta Timur 13440")
+  phone                 String   @default("+62 21-1234-5678")
+  whatsapp              String   @default("+62 812-3456-7890")
+  email                 String   @default("info@betarak.com")
+  heroWhatsapp          String   @default("+62 812-3456-7890")
+  heroEmail             String   @default("info@betarak.com")
+  heroOperatingHours    String   @default("Senin - Jumat WIB")
+  mondayFriday          String   @default("Senin - Jumat: 08:00 - 17:00 WIB")
+  saturday              String   @default("Sabtu: 08:00 - 15:00 WIB")
+  sunday                String   @default("Minggu: Tutup")
+  serviceAreas          String   @default("Jabodetabek, Bandung, Surabaya, Semarang, Yogyakarta, Medan, Makassar, dan kota besar lainnya")
+  specialNote           String   @default("*Pengiriman ke seluruh Indonesia")
+  facebookUrl           String   @default("#")
+  instagramUrl          String   @default("#")
+  youtubeUrl            String   @default("#")
+  copyrightText         String   @default("© 2024 Betarak Indonesia. Semua hak dilindungi undang-undang.")
+  favicon               String   @default("/favicon.ico")
+  siteTitle             String   @default("Betarak - Store Warehouse Solution")
+  siteDescription       String   @default("Betarak adalah penyedia solusi rak dan perlengkapan toko terlengkap di Indonesia")
+  createdAt             DateTime @default(now())
+  updatedAt             DateTime @updatedAt
+  paymentWhatsappNumber String   @default("+62 813-4007-8956")
+
+  @@map("website_settings")
+}
+
+model Testimonial {
+  id         String   @id @default(cuid())
+  name       String
+  position   String?
+  company    String?
+  rating     Int      @default(5)
+  comment    String
+  image      String?
+  isActive   Boolean  @default(true)
+  isFeatured Boolean  @default(false)
+  location   String?
+  project    String?
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+
+  @@map("testimonials")
+}
+
+model JobPosting {
+  id               String    @id @default(cuid())
+  title            String
+  department       String
+  location         String
+  employmentType   String
+  description      String
+  requirements     String
+  responsibilities String
+  benefits         String?
+  salary           String?
+  slug             String    @unique
+  isActive         Boolean   @default(true)
+  sortOrder        Int       @default(0)
+  postedDate       DateTime  @default(now())
+  closingDate      DateTime?
+  createdAt        DateTime  @default(now())
+  updatedAt        DateTime  @updatedAt
+
+  @@map("job_postings")
+}
+
+model CareerSettings {
+  id                      String   @id @default(cuid())
+  isHiring                Boolean  @default(true)
+  heroTitle               String   @default("Bergabung Bersama Kami")
+  heroSubtitle            String   @default("Kami mencari talenta terbaik untuk bergabung dalam tim yang dinamis dan inovatif")
+  companyDescription      String   @default("Betarak adalah perusahaan terdepan dalam penyediaan solusi rak dan perlengkapan toko. Kami berkomitmen untuk memberikan produk berkualitas tinggi dan pelayanan terbaik kepada pelanggan.")
+  whyJoinUs               String   @default("[\"Lingkungan kerja yang dinamis dan inovatif\",\"Kesempatan pengembangan karir yang jelas\",\"Tim yang solid dan suportif\",\"Benefit dan kompensasi yang kompetitif\",\"Work-life balance yang baik\"]")
+  employmentTypes         String   @default("[\"Full-time\",\"Part-time\",\"Contract\",\"Internship\",\"Freelance\"]")
+  applicationInstructions String   @default("Kirimkan CV dan surat lamaran terbaru Anda ke email yang tertera pada lowongan yang diminati. Pastikan untuk mencantumkan posisi yang dilamar pada subject email.")
+  applyCardTitle          String   @default("Tertarik Melamar?")
+  applyButtonText         String   @default("Kirim Lamaran")
+  shareCardTitle          String   @default("Bagikan Lowongan")
+  whatsappButtonText      String   @default("WhatsApp")
+  copyLinkButtonText      String   @default("Salin Link")
+  whatsappShareNumber     String?
+  hrEmail                 String   @default("hr@betarak.com")
+  createdAt               DateTime @default(now())
+  updatedAt               DateTime @updatedAt
+
+  @@map("career_settings")
+}
+
+model ContactSettings {
+  id                 String   @id @default(cuid())
+  address            String   @default("Jl. Raya No. 123\nJakarta Timur - 13410\nIndonesia")
+  phone              String   @default("+62 1 - 234-5678")
+  whatsapp           String   @default("+62 812-3456-7890")
+  email              String   @default("info@betarak.com")
+  operatingHours     String   @default("Senin-Jumat: 08:00 - 17:00\nSabtu: 08:00 - 15:00\nMinggu: Tutup")
+  whatsappButtonText String   @default("Chat WhatsApp")
+  phoneButtonText    String   @default("Telepon Marketing")
+  mapEmbedUrl        String?
+  mapTitle           String   @default("Peta Lokasi\nKunjungi toko kami secara langsung")
+  faqTitle           String   @default("Pertanyaan yang Sering Diajukan")
+  faqItems           String
+  pageTitle          String   @default("Informasi Kontak")
+  pageDescription    String   @default("Hubungi kami untuk konsultasi gratis dan informasi produk.")
+  createdAt          DateTime @default(now())
+  updatedAt          DateTime @updatedAt
+
+  @@map("contact_settings")
+}
+
+model Storyline {
+  id                 String   @id @default(cuid())
+  smallTitle         String   @default("Our Storyline,")
+  mainTitle          String   @default("Some Journey Can't be Seen, Only Felt.")
+  content            String
+  linkText           String   @default("The line continues →")
+  linkUrl            String   @default("/about")
+  image              String?
+  isActive           Boolean  @default(true)
+  catalogTitle       String   @default("Latest Catalog")
+  catalogSubtitle    String   @default("THE FIRST BORN")
+  catalogDescription String   @default("Embrace and mark your journey with us — explore the places that speak to you.")
+  catalogImages      String
+  createdAt          DateTime @default(now())
+  updatedAt          DateTime @updatedAt
+
+  @@map("storylines")
+}
+
+model ProfileSettings {
+  id                    String   @id @default(cuid())
+  heroTitle             String   @default("Tentang Betarak")
+  heroDescription       String   @default("Solusi terpercaya untuk kebutuhan rak dan perlengkapan toko Anda. Kami menghadirkan produk berkualitas tinggi dengan harga terjangkau.")
+  heroImage             String?
+  visionTitle           String   @default("Visi & Misi Kami")
+  visionContent         String   @default("Menjadi penyedia solusi rak dan perlengkapan toko terdepan di Indonesia yang dapat membantu setiap bisnis berkembang dengan efisien.")
+  missionTitle          String   @default("Misi")
+  missionItems          String   @default("[\"Menyediakan produk berkualitas tinggi dengan harga terjangkau\",\"Memberikan pelayanan terbaik kepada setiap pelanggan\",\"Menghadirkan solusi inovatif untuk kebutuhan penyimpanan\",\"Membantu mengoptimalkan ruang usaha pelanggan\"]")
+  visionImage           String?
+  whyChooseTitle        String   @default("Mengapa Memilih Betarak?")
+  feature1Icon          String   @default("check")
+  feature1Title         String   @default("Kualitas Premium")
+  feature1Description   String   @default("Material berkualitas tinggi yang tahan lama dan kuat untuk berbagai kebutuhan penyimpanan.")
+  feature2Icon          String   @default("money")
+  feature2Title         String   @default("Harga Terpercaya")
+  feature2Description   String   @default("Dapatkan produk berkualitas dengan harga yang kompetitif dan terjangkau untuk semua kalangan.")
+  feature3Icon          String   @default("shield")
+  feature3Title         String   @default("Garansi Resmi")
+  feature3Description   String   @default("Kepercayaan dan kepuasan pelanggan adalah prioritas utama dengan garansi resmi.")
+  galleryTitle          String   @default("Portfolio & Galeri Kami")
+  galleryDescription    String   @default("Lihat berbagai proyek dan pencapaian kami dalam memberikan solusi penyimpanan terbaik")
+  createdAt             DateTime @default(now())
+  updatedAt             DateTime @updatedAt
+
+  @@map("profile_settings")
+}
