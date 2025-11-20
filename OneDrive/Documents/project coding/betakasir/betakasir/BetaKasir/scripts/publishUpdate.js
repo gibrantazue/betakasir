@@ -110,7 +110,7 @@ try {
 
   // Step 3: Build and publish
   console.log('📤 Step 3/3: Building and publishing to GitHub...');
-  execSync('electron-builder --win --publish always', { stdio: 'inherit' });
+  execSync('npx electron-builder --win --publish always', { stdio: 'inherit' });
   console.log('   ✅ Published to GitHub Releases');
   console.log('');
 
