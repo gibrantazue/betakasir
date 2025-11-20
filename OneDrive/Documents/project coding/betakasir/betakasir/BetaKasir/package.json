@@ -1,0 +1,149 @@
+{
+  "name": "betakasir",
+  "version": "1.1.0",
+  "description": "Sistem Kasir Modern untuk Toko dan Bisnis",
+  "author": "BetaKasir Team",
+  "main": "index.js",
+  "homepage": "./",
+  "scripts": {
+    "start": "expo start --dev-client",
+    "android": "expo start --android",
+    "ios": "expo start --ios",
+    "web": "expo start --web",
+    "electron": "electron electron/main.js",
+    "electron-dev": "concurrently \"npm start\" \"wait-on http://localhost:8081 && electron electron/main.js\"",
+    "build-web": "expo export --platform web --output-dir web-build && node fix-html-paths.js && node fix-favicon.js",
+    "build-electron": "npm run build-web && electron-builder --win",
+    "build-electron-all": "npm run build-web && electron-builder --win --mac --linux",
+    "publish-update": "npm run build-web && electron-builder --win --publish always",
+    "dist": "npm run build-electron"
+  },
+  "build": {
+    "appId": "com.betakasir.app",
+    "productName": "BetaKasir",
+    "copyright": "Copyright © 2025 BetaKasir",
+    "publish": [
+      {
+        "provider": "github",
+        "owner": "gibrantazue",
+        "repo": "betakasir",
+        "private": false
+      }
+    ],
+    "directories": {
+      "buildResources": ".",
+      "output": "dist"
+    },
+    "files": [
+      "index.js",
+      "electron/**/*",
+      "web-build/**/*",
+      "assets/**/*",
+      "package.json"
+    ],
+    "extraResources": [
+      {
+        "from": "icon.ico",
+        "to": "icon.ico"
+      },
+      {
+        "from": "electron/icon.ico",
+        "to": "electron/icon.ico"
+      }
+    ],
+    "asar": false,
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        }
+      ],
+      "icon": "icon.ico",
+      "signAndEditExecutable": false
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "BetaKasir",
+      "installerIcon": "icon.ico",
+      "uninstallerIcon": "icon.ico",
+      "installerHeaderIcon": "icon.ico",
+      "deleteAppDataOnUninstall": false
+    },
+    "mac": {
+      "target": [
+        "dmg"
+      ],
+      "icon": "assets/icon.ico",
+      "category": "public.app-category.business"
+    },
+    "linux": {
+      "target": [
+        "AppImage",
+        "deb"
+      ],
+      "icon": "assets/icon.ico",
+      "category": "Office"
+    }
+  },
+  "dependencies": {
+    "@expo/vector-icons": "^15.0.3",
+    "@google/generative-ai": "^0.24.1",
+    "@react-native-async-storage/async-storage": "^2.2.0",
+    "@react-native-firebase/app": "^23.5.0",
+    "@react-native-firebase/auth": "^23.5.0",
+    "@react-native-google-signin/google-signin": "^16.0.0",
+    "@react-navigation/bottom-tabs": "^7.8.1",
+    "@react-navigation/native": "^7.1.19",
+    "@react-navigation/native-stack": "^7.6.2",
+    "electron-log": "^5.4.3",
+    "electron-serve": "^3.0.0",
+    "electron-updater": "^6.6.2",
+    "expo": "~54.0.22",
+    "expo-barcode-scanner": "^13.0.1",
+    "expo-camera": "^17.0.9",
+    "expo-crypto": "~15.0.7",
+    "expo-dev-client": "~6.0.17",
+    "expo-image-picker": "^17.0.8",
+    "expo-print": "^15.0.7",
+    "expo-sharing": "~14.0.7",
+    "expo-sqlite": "^16.0.9",
+    "expo-status-bar": "~3.0.8",
+    "firebase": "^12.5.0",
+    "groq-sdk": "^0.35.0",
+    "jspdf": "^3.0.3",
+    "jspdf-autotable": "^5.0.2",
+    "openai": "^6.9.0",
+    "react": "19.1.0",
+    "react-dom": "^19.1.0",
+    "react-native": "0.81.5",
+    "react-native-chart-kit": "^6.12.0",
+    "react-native-markdown-display": "^7.0.2",
+    "react-native-paper": "^5.14.5",
+    "react-native-safe-area-context": "^5.6.2",
+    "react-native-screens": "~4.16.0",
+    "react-native-svg": "^15.15.0",
+    "react-native-vector-icons": "^10.3.0",
+    "react-native-web": "^0.19.13",
+    "recharts": "^3.4.1",
+    "zustand": "^5.0.8"
+  },
+  "devDependencies": {
+    "@types/react": "~19.1.10",
+    "concurrently": "^9.2.1",
+    "cross-env": "^10.1.0",
+    "electron": "^39.1.2",
+    "electron-builder": "^26.0.12",
+    "electron-icon-builder": "^2.0.1",
+    "electron-is-dev": "^3.0.1",
+    "rcedit": "^5.0.0",
+    "typescript": "~5.9.2",
+    "wait-on": "^9.0.3"
+  },
+  "private": true
+}
