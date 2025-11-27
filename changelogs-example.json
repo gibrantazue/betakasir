@@ -1,0 +1,77 @@
+[
+  {
+    "version": "1.2.2",
+    "date": "2025-11-23",
+    "title": "Patch Update",
+    "description": "Version synchronization update dengan fitur zoom control untuk desktop app.",
+    "type": "patch",
+    "changes": [
+      {
+        "category": "feature",
+        "text": "Zoom control untuk desktop (Ctrl +/-/0)"
+      },
+      {
+        "category": "feature",
+        "text": "Smooth zoom dengan increment 0.5 per press"
+      },
+      {
+        "category": "improvement",
+        "text": "Version synchronization across all files"
+      },
+      {
+        "category": "bugfix",
+        "text": "Bug fixes dan improvements"
+      }
+    ]
+  },
+  {
+    "version": "1.2.0",
+    "date": "2025-11-22",
+    "title": "Realtime Update & Pro Plan",
+    "description": "Update v1.2.0 membawa sistem notifikasi update realtime dan rebranding Business Plan menjadi Pro Plan.",
+    "type": "minor",
+    "changes": [
+      {
+        "category": "feature",
+        "text": "Realtime Update Notification System"
+      },
+      {
+        "category": "feature",
+        "text": "Smart version comparison otomatis"
+      },
+      {
+        "category": "improvement",
+        "text": "Business Plan → Pro Plan rebranding"
+      },
+      {
+        "category": "bugfix",
+        "text": "Fixed Alert.alert() tidak bekerja di web browser"
+      }
+    ]
+  },
+  {
+    "version": "1.1.9",
+    "date": "2025-01-22",
+    "title": "AI Knows App Version",
+    "description": "AI Assistant sekarang otomatis mengetahui versi aplikasi dan changelog terbaru!",
+    "type": "minor",
+    "changes": [
+      {
+        "category": "feature",
+        "text": "AI Assistant sekarang tahu versi aplikasi saat ini"
+      },
+      {
+        "category": "feature",
+        "text": "AI dapat menjawab pertanyaan tentang changelog terbaru"
+      },
+      {
+        "category": "improvement",
+        "text": "Caching untuk performa optimal"
+      },
+      {
+        "category": "bugfix",
+        "text": "Fixed tombol Cek Update"
+      }
+    ]
+  }
+]

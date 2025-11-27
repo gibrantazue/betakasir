@@ -1,0 +1,106 @@
+// ============================================
+// FIRESTORE RULES - SISTEM REFERRAL
+// ============================================
+// Copy semua isi file ini dan paste ke Firebase Console
+// Firestore Database → Rules → Edit → Paste → Publish
+
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    
+    // Helper function - Check if user is authenticated
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+    
+    // Helper function - Check if user is admin
+    function isAdmin() {
+      return isAuthenticated() && 
+        get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role == 'admin';
+    }
+    
+    // Helper function - Check if user is sales
+    function isSales() {
+      return isAuthenticated() && 
+        get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role == 'sales';
+    }
+    
+    // Helper function - Check if user is owner of document
+    function isOwner(uid) {
+      return isAuthenticated() && request.auth.uid == uid;
+    }
+    
+    // ============================================
+    // EXISTING RULES (jangan dihapus)
+    // ============================================
+    
+    // Users collection
+    match /users/{userId} {
+      allow read: if isAuthenticated();
+      allow write: if isOwner(userId) || isAdmin();
+    }
+    
+    // Products, Transactions, Customers, dll
+    // ... (rules yang sudah ada, jangan dihapus)
+    
+    // ============================================
+    // NEW RULES - SISTEM REFERRAL
+    // ============================================
+    
+    // Sales Users Collection
+    match /salesUsers/{salesUid} {
+      // Read: Semua authenticated user bisa baca (untuk validasi kode)
+      allow read: if isAuthenticated();
+      
+      // Create: Hanya admin yang bisa buat sales user baru
+      allow create: if isAdmin();
+      
+      // Update: Sales bisa update data sendiri, atau admin bisa update semua
+      allow update: if isOwner(salesUid) || isAdmin();
+      
+      // Delete: Hanya admin yang bisa hapus
+      allow delete: if isAdmin();
+    }
+    
+    // Referrals Collection
+    match /referrals/{referralId} {
+      // Read: Sales bisa baca referral sendiri, admin bisa baca semua
+      allow read: if isAuthenticated() && 
+        (resource.data.salesUid == request.auth.uid || isAdmin());
+      
+      // Create: Semua authenticated user bisa create (saat register)
+      allow create: if isAuthenticated();
+      
+      // Update: Hanya admin yang bisa update (untuk bayar komisi)
+      allow update: if isAdmin();
+      
+      // Delete: Hanya admin yang bisa hapus
+      allow delete: if isAdmin();
+    }
+    
+    // Commissions Collection
+    match /commissions/{commissionId} {
+      // Read: Sales bisa baca komisi sendiri, admin bisa baca semua
+      allow read: if isAuthenticated() && 
+        (resource.data.salesUid == request.auth.uid || isAdmin());
+      
+      // Create: Semua authenticated user bisa create (saat apply referral)
+      allow create: if isAuthenticated();
+      
+      // Update: Hanya admin yang bisa update (untuk bayar komisi)
+      allow update: if isAdmin();
+      
+      // Delete: Hanya admin yang bisa hapus
+      allow delete: if isAdmin();
+    }
+  }
+}
+
+// ============================================
+// NOTES:
+// ============================================
+// 1. Pastikan rules untuk collection lain (users, products, dll) tetap ada
+// 2. Jangan hapus rules yang sudah ada sebelumnya
+// 3. Tambahkan rules di atas ke dalam existing rules
+// 4. Test rules dengan Firebase Rules Playground
+// 5. Klik "Publish" setelah selesai edit

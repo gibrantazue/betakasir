@@ -1,0 +1,30 @@
+🔗 LINK GITHUB RELEASE v1.1.7
+
+Copy link ini dan paste di browser:
+https://github.com/gibrantazue/betakasir/releases/new
+
+---
+
+📋 FORM DATA:
+
+Tag: v1.1.7
+
+Title: v1.1.7 - Realtime System & Sales Dashboard Analytics
+
+Description: (Copy dari CARA_CREATE_GITHUB_RELEASE_V1.1.7.md)
+
+Upload: dist/BetaKasir Setup 1.1.7.exe
+
+✅ Set as latest release
+
+---
+
+⚡ QUICK STEPS:
+
+1. Copy link di atas
+2. Paste di browser
+3. Fill form dengan data di atas
+4. Upload installer
+5. Publish!
+
+Total: 3 menit

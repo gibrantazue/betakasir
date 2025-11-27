@@ -1,0 +1,55 @@
+[
+  {
+    "version": "1.2.2",
+    "date": "2025-11-24",
+    "title": "JSON Upload Feature & UI Improvements",
+    "description": "Update v1.2.2 membawa fitur upload changelog dari JSON dan berbagai perbaikan UI di Admin Dashboard.",
+    "type": "minor",
+    "changes": [
+      {
+        "category": "feature",
+        "text": "Upload changelog dari file JSON - bulk upload multiple changelogs sekaligus"
+      },
+      {
+        "category": "feature",
+        "text": "JSON parser dengan validasi otomatis untuk format changelog"
+      },
+      {
+        "category": "feature",
+        "text": "Contoh file JSON template untuk memudahkan admin"
+      },
+      {
+        "category": "improvement",
+        "text": "Hapus tombol Create Referral dari Admin Dashboard (sudah ada di Sales Management)"
+      },
+      {
+        "category": "improvement",
+        "text": "Hapus Changelog Management dari Content Editor (sudah ada di Admin Dashboard)"
+      },
+      {
+        "category": "improvement",
+        "text": "Tambah changelog v1.1.9, v1.2.0, v1.2.1 ke Admin Dashboard"
+      },
+      {
+        "category": "improvement",
+        "text": "Better organization untuk admin features"
+      },
+      {
+        "category": "improvement",
+        "text": "Simplified changelog upload workflow"
+      },
+      {
+        "category": "bugfix",
+        "text": "Fixed syntax error di AdminSalesManagementScreen (nested try-catch)"
+      },
+      {
+        "category": "bugfix",
+        "text": "Fixed changelog tidak muncul di Kelola Changelog screen"
+      },
+      {
+        "category": "bugfix",
+        "text": "Fixed duplicate features di admin interface"
+      }
+    ]
+  }
+]

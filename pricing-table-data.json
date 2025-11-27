@@ -1,0 +1,284 @@
+{
+  "title": "BetaKasir - Daftar Harga & Paket Langganan",
+  "subtitle": "Pilih paket yang sesuai dengan kebutuhan bisnis Anda",
+  "contact": {
+    "whatsapp": "081340078956",
+    "email": "support@betakasir.com"
+  },
+  "plans": [
+    {
+      "name": "Standard",
+      "badge": "PALING POPULER",
+      "description": "Untuk usaha menengah yang sedang berkembang",
+      "pricing": {
+        "monthly": {
+          "price": 200000,
+          "formatted": "Rp 200.000",
+          "period": "per bulan"
+        },
+        "yearly": {
+          "price": 2160000,
+          "formatted": "Rp 2.160.000",
+          "period": "per tahun",
+          "savings": 240000,
+          "savingsFormatted": "Rp 240.000",
+          "discount": "10%"
+        }
+      },
+      "features": {
+        "limits": [
+          {
+            "name": "Maksimal Produk",
+            "value": "500",
+            "included": true
+          },
+          {
+            "name": "Kelola Karyawan",
+            "value": "Maksimal 5 karyawan",
+            "included": true
+          },
+          {
+            "name": "Transaksi per Bulan",
+            "value": "1.000 transaksi",
+            "included": true
+          },
+          {
+            "name": "Lokasi/Cabang",
+            "value": "1 lokasi",
+            "included": true
+          }
+        ],
+        "basic": [
+          {
+            "name": "Kasir POS",
+            "included": true
+          },
+          {
+            "name": "Barcode Scanner",
+            "included": true
+          },
+          {
+            "name": "Cetak Struk",
+            "included": true
+          }
+        ],
+        "employee": [
+          {
+            "name": "Cetak ID Card Karyawan",
+            "included": true
+          },
+          {
+            "name": "QR Login Karyawan",
+            "included": true
+          },
+          {
+            "name": "Role & Permissions",
+            "included": true
+          }
+        ],
+        "advanced": [
+          {
+            "name": "Realtime Sync Multi-Device",
+            "included": true
+          },
+          {
+            "name": "Laporan Penjualan Lanjutan",
+            "included": true
+          },
+          {
+            "name": "AI Assistant",
+            "included": true
+          },
+          {
+            "name": "Export Transaksi",
+            "included": true
+          },
+          {
+            "name": "Hapus Transaksi",
+            "included": true
+          },
+          {
+            "name": "Kustomisasi Struk",
+            "included": true
+          }
+        ],
+        "support": [
+          {
+            "name": "Priority Support 24/7",
+            "included": false
+          }
+        ]
+      }
+    },
+    {
+      "name": "Pro",
+      "badge": null,
+      "description": "Untuk bisnis besar dengan kebutuhan lengkap",
+      "pricing": {
+        "monthly": {
+          "price": 800000,
+          "formatted": "Rp 800.000",
+          "period": "per bulan"
+        },
+        "yearly": {
+          "price": 8640000,
+          "formatted": "Rp 8.640.000",
+          "period": "per tahun",
+          "savings": 960000,
+          "savingsFormatted": "Rp 960.000",
+          "discount": "10%"
+        }
+      },
+      "features": {
+        "limits": [
+          {
+            "name": "Maksimal Produk",
+            "value": "UNLIMITED",
+            "included": true
+          },
+          {
+            "name": "Kelola Karyawan",
+            "value": "UNLIMITED",
+            "included": true
+          },
+          {
+            "name": "Transaksi per Bulan",
+            "value": "UNLIMITED",
+            "included": true
+          },
+          {
+            "name": "Lokasi/Cabang",
+            "value": "UNLIMITED",
+            "included": true
+          }
+        ],
+        "basic": [
+          {
+            "name": "Kasir POS",
+            "included": true
+          },
+          {
+            "name": "Barcode Scanner",
+            "included": true
+          },
+          {
+            "name": "Cetak Struk",
+            "included": true
+          }
+        ],
+        "employee": [
+          {
+            "name": "Cetak ID Card Karyawan",
+            "included": true
+          },
+          {
+            "name": "QR Login Karyawan",
+            "included": true
+          },
+          {
+            "name": "Role & Permissions",
+            "included": true
+          }
+        ],
+        "advanced": [
+          {
+            "name": "Realtime Sync Multi-Device",
+            "included": true
+          },
+          {
+            "name": "Laporan Penjualan Lanjutan",
+            "included": true
+          },
+          {
+            "name": "AI Assistant",
+            "included": true
+          },
+          {
+            "name": "Export Transaksi",
+            "included": true
+          },
+          {
+            "name": "Hapus Transaksi",
+            "included": true
+          },
+          {
+            "name": "Kustomisasi Struk",
+            "included": true
+          }
+        ],
+        "support": [
+          {
+            "name": "Priority Support 24/7",
+            "included": true
+          }
+        ]
+      }
+    }
+  ],
+  "comparisonTable": {
+    "headers": ["Fitur", "Standard", "Pro"],
+    "rows": [
+      {
+        "category": "Harga",
+        "items": [
+          ["Harga Bulanan", "Rp 200.000", "Rp 800.000"],
+          ["Harga Tahunan", "Rp 2.160.000 (Hemat Rp 240K)", "Rp 8.640.000 (Hemat Rp 960K)"]
+        ]
+      },
+      {
+        "category": "Limit & Kapasitas",
+        "items": [
+          ["Maksimal Produk", "500", "UNLIMITED"],
+          ["Kelola Karyawan", "Maks 5", "UNLIMITED"],
+          ["Transaksi per Bulan", "1.000", "UNLIMITED"],
+          ["Lokasi/Cabang", "1", "UNLIMITED"]
+        ]
+      },
+      {
+        "category": "Fitur Dasar",
+        "items": [
+          ["Kasir POS", "✓", "✓"],
+          ["Barcode Scanner", "✓", "✓"],
+          ["Cetak Struk", "✓", "✓"]
+        ]
+      },
+      {
+        "category": "Manajemen Karyawan",
+        "items": [
+          ["Cetak ID Card Karyawan", "✓", "✓"],
+          ["QR Login Karyawan", "✓", "✓"],
+          ["Role & Permissions", "✓", "✓"]
+        ]
+      },
+      {
+        "category": "Fitur Lanjutan",
+        "items": [
+          ["Realtime Sync Multi-Device", "✓", "✓"],
+          ["Laporan Penjualan Lanjutan", "✓", "✓"],
+          ["AI Assistant", "✓", "✓"],
+          ["Export Transaksi", "✓", "✓"],
+          ["Hapus Transaksi", "✓", "✓"],
+          ["Kustomisasi Struk", "✓", "✓"]
+        ]
+      },
+      {
+        "category": "Support",
+        "items": [
+          ["Priority Support 24/7", "✗", "✓"]
+        ]
+      }
+    ]
+  },
+  "paymentMethods": [
+    "Transfer Bank (BCA, Mandiri, BNI, BRI)",
+    "Kartu Kredit (Visa, Mastercard)",
+    "E-Wallet (GoPay, OVO, Dana, ShopeePay)"
+  ],
+  "notes": [
+    "Semua harga sudah termasuk PPN 11%",
+    "Pembayaran tahunan hemat 10% dari harga bulanan",
+    "Gratis trial 7 hari untuk semua paket",
+    "Bisa upgrade/downgrade kapan saja",
+    "Garansi uang kembali 30 hari"
+  ]
+}

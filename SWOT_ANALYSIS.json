@@ -1,0 +1,1700 @@
+{
+  "metadata": {
+    "title": "Analisis SWOT - BetaKasir",
+    "subtitle": "Aplikasi Point of Sale (POS) Modern untuk UMKM Indonesia",
+    "version": "2.0.0",
+    "date": "2025-11-18",
+    "author": "BetaKasir Team",
+    "description": "Analisis mendalam tentang kekuatan, kelemahan, peluang, dan ancaman aplikasi BetaKasir sebagai solusi POS untuk bisnis retail di Indonesia"
+  },
+  "executive_summary": {
+    "overview": "BetaKasir adalah aplikasi Point of Sale (POS) yang dirancang khusus untuk UMKM Indonesia dengan fitur lengkap mulai dari manajemen produk, transaksi kasir, laporan keuangan, hingga sistem karyawan dan subscription berbasis cloud.",
+    "key_highlights": [
+      "Multi-platform: Mobile (Android/iOS), Web, dan Desktop (Windows/Mac/Linux)",
+      "Offline-first dengan sinkronisasi real-time",
+      "Sistem subscription dengan 3 tier: Free, Business, Enterprise",
+      "AI Assistant terintegrasi untuk bantuan operasional",
+      "Sistem karyawan dengan role-based permissions",
+      "Barcode scanner hardware dan software support"
+    ],
+    "target_market": "UMKM, toko retail, minimarket, warung, dan bisnis kecil-menengah di Indonesia",
+    "competitive_position": "Solusi POS terjangkau dengan fitur enterprise-level untuk pasar UMKM"
+  },
+  "strengths": {
+    "title": "KEKUATAN (Strengths)",
+    "description": "Faktor internal positif yang memberikan keunggulan kompetitif",
+    "items": [
+      {
+        "category": "Teknologi & Platform",
+        "points": [
+          {
+            "title": "Multi-Platform Support",
+            "description": "Tersedia di Android, iOS, Web, dan Desktop (Windows/Mac/Linux)",
+            "impact": "High",
+            "details": "Pengguna dapat mengakses dari device apapun, meningkatkan fleksibilitas dan jangkauan pasar",
+            "metrics": "4 platform berbeda dengan 1 codebase"
+          },
+          {
+            "title": "Teknologi Modern",
+            "description": "Dibangun dengan React Native, TypeScript, Expo, dan Firebase",
+            "impact": "High",
+            "details": "Stack teknologi yang proven, scalable, dan mudah di-maintain dengan komunitas besar",
+            "metrics": "React Native (19.1.0), TypeScript, Expo 54"
+          },
+          {
+            "title": "Offline-First Architecture",
+            "description": "Aplikasi tetap berfungsi tanpa koneksi internet",
+            "impact": "Critical",
+            "details": "Data disimpan lokal dengan AsyncStorage, sinkronisasi otomatis saat online",
+            "metrics": "100% functionality offline, auto-sync saat online"
+          },
+          {
+            "title": "Real-time Synchronization",
+            "description": "Sinkronisasi data real-time menggunakan Firebase Firestore",
+            "impact": "High",
+            "details": "Perubahan data langsung tersinkronisasi ke semua device yang terhubung",
+            "metrics": "Latency < 1 detik untuk sync"
+          }
+        ]
+      },
+      {
+        "category": "Fitur Lengkap",
+        "points": [
+          {
+            "title": "Sistem Kasir Profesional",
+            "description": "Transaksi cepat dengan keyboard shortcuts dan barcode scanner",
+            "impact": "Critical",
+            "details": "Mode desktop dengan layout 2 kolom, 15+ keyboard shortcuts (F1-F12), support scanner hardware",
+            "metrics": "3x lebih cepat dari mouse, 15 detik per transaksi"
+          },
+          {
+            "title": "Manajemen Produk Komprehensif",
+            "description": "CRUD produk lengkap dengan kategori, stok, harga, dan barcode",
+            "impact": "High",
+            "details": "Unlimited produk, kategori custom, tracking stok real-time, alert stok menipis",
+            "metrics": "Unlimited products, 10+ kategori default"
+          },
+          {
+            "title": "Laporan Keuangan Detail",
+            "description": "Dashboard analytics dengan grafik dan export PDF",
+            "impact": "High",
+            "details": "Laporan harian/bulanan/tahunan, grafik penjualan, produk terlaris, profit analysis",
+            "metrics": "10+ jenis laporan, export PDF/Excel"
+          },
+          {
+            "title": "Sistem Karyawan & Permissions",
+            "description": "Multi-user dengan role-based access control",
+            "impact": "High",
+            "details": "3 role (Owner, Manager, Cashier), QR code login, tracking aktivitas karyawan",
+            "metrics": "Unlimited employees (Business+), 3 roles"
+          },
+          {
+            "title": "AI Assistant Integration",
+            "description": "Chatbot AI untuk bantuan operasional menggunakan Gemini/Groq",
+            "impact": "Medium",
+            "details": "Bantuan real-time untuk pertanyaan produk, transaksi, dan troubleshooting",
+            "metrics": "Response time < 3 detik"
+          },
+          {
+            "title": "Barcode Scanner",
+            "description": "Support scanner hardware (USB) dan software (camera)",
+            "impact": "High",
+            "details": "Plug-and-play USB scanner, camera scanner untuk mobile, support EAN13/EAN8/Code128/QR",
+            "metrics": "4+ format barcode supported"
+          },
+          {
+            "title": "Cetak Struk Profesional",
+            "description": "Print struk dengan format customizable",
+            "impact": "High",
+            "details": "Support thermal printer (Bluetooth/USB/WiFi), template struk custom, logo toko",
+            "metrics": "3 jenis koneksi printer"
+          },
+          {
+            "title": "Backup & Restore",
+            "description": "Backup data otomatis dan manual",
+            "impact": "Critical",
+            "details": "Auto backup harian, export/import data, cloud backup (Firebase Storage)",
+            "metrics": "Daily auto-backup, unlimited manual backup"
+          }
+        ]
+      },
+      {
+        "category": "Model Bisnis",
+        "points": [
+          {
+            "title": "Subscription Tiers",
+            "description": "3 paket: Free, Business (Rp 99.000/bulan), Enterprise (Rp 299.000/bulan)",
+            "impact": "High",
+            "details": "Free trial 14 hari, upgrade/downgrade fleksibel, fitur bertahap sesuai kebutuhan",
+            "metrics": "3 tiers, 14 hari free trial"
+          },
+          {
+            "title": "Freemium Model",
+            "description": "Versi gratis dengan fitur dasar untuk menarik pengguna",
+            "impact": "High",
+            "details": "Free plan: 1 kasir, 100 produk, laporan basic - cukup untuk usaha kecil",
+            "metrics": "100 produk gratis, 1 kasir"
+          },
+          {
+            "title": "Auto-Update System",
+            "description": "Update otomatis untuk bug fixes dan fitur baru",
+            "impact": "Medium",
+            "details": "OTA updates tanpa perlu download ulang, changelog terintegrasi",
+            "metrics": "Weekly updates, 0 downtime"
+          }
+        ]
+      },
+      {
+        "category": "User Experience",
+        "points": [
+          {
+            "title": "UI/UX Modern",
+            "description": "Interface clean dengan dark/light mode",
+            "impact": "Medium",
+            "details": "Design minimalis, color scheme konsisten, responsive di semua ukuran layar",
+            "metrics": "2 themes, responsive design"
+          },
+          {
+            "title": "Onboarding & Tutorial",
+            "description": "Panduan lengkap dan user guide terintegrasi",
+            "impact": "Medium",
+            "details": "Tutorial interaktif, dokumentasi lengkap, FAQ, video guide",
+            "metrics": "50+ dokumentasi, in-app guide"
+          },
+          {
+            "title": "Keyboard Shortcuts",
+            "description": "15+ shortcuts untuk transaksi cepat",
+            "impact": "High",
+            "details": "F1-F12 untuk fungsi utama, Ctrl combinations, customizable shortcuts",
+            "metrics": "15+ shortcuts, 3x faster"
+          },
+          {
+            "title": "Multi-Language Ready",
+            "description": "Struktur i18n siap untuk multi-bahasa",
+            "impact": "Low",
+            "details": "Saat ini Bahasa Indonesia, struktur siap untuk ekspansi ke bahasa lain",
+            "metrics": "1 bahasa aktif, struktur untuk 10+ bahasa"
+          }
+        ]
+      },
+      {
+        "category": "Keamanan & Reliability",
+        "points": [
+          {
+            "title": "Firebase Authentication",
+            "description": "Sistem autentikasi aman dengan Google Sign-In",
+            "impact": "High",
+            "details": "Email/password, Google OAuth, reset password, email verification",
+            "metrics": "4 metode autentikasi"
+          },
+          {
+            "title": "Data Encryption",
+            "description": "Data sensitif terenkripsi",
+            "impact": "High",
+            "details": "Firebase security rules, HTTPS only, encrypted local storage",
+            "metrics": "256-bit encryption"
+          },
+          {
+            "title": "Error Handling",
+            "description": "Error boundary dan logging komprehensif",
+            "impact": "Medium",
+            "details": "Graceful error handling, user-friendly error messages, crash reporting",
+            "metrics": "99.9% uptime target"
+          }
+        ]
+      },
+      {
+        "category": "Dokumentasi & Support",
+        "points": [
+          {
+            "title": "Dokumentasi Lengkap",
+            "description": "200+ file dokumentasi untuk semua fitur",
+            "impact": "High",
+            "details": "Setup guide, troubleshooting, FAQ, technical docs, user manual",
+            "metrics": "200+ markdown files"
+          },
+          {
+            "title": "Testing Documents",
+            "description": "Auto-generate testing documents untuk QA",
+            "impact": "Medium",
+            "details": "Test cases otomatis, checklist testing, bug tracking",
+            "metrics": "50+ test documents"
+          }
+        ]
+      }
+    ],
+    "summary": "BetaKasir memiliki fondasi teknologi yang kuat dengan fitur lengkap yang kompetitif di pasar POS Indonesia. Multi-platform support dan offline-first architecture menjadi keunggulan utama."
+  },
+  "weaknesses": {
+    "title": "KELEMAHAN (Weaknesses)",
+    "description": "Faktor internal yang perlu diperbaiki atau ditingkatkan",
+    "items": [
+      {
+        "category": "Penetrasi Pasar",
+        "points": [
+          {
+            "title": "Brand Awareness Rendah",
+            "description": "Masih baru di pasar, belum dikenal luas",
+            "impact": "Critical",
+            "details": "Kompetitor seperti Moka, Pawoon, iReap sudah established dengan user base besar",
+            "mitigation": "Strategi marketing agresif, partnership dengan komunitas UMKM, content marketing",
+            "priority": "High"
+          },
+          {
+            "title": "User Base Terbatas",
+            "description": "Belum memiliki customer base yang signifikan",
+            "impact": "High",
+            "details": "Startup baru tanpa track record, sulit meyakinkan enterprise customer",
+            "mitigation": "Focus pada SME dulu, build case studies, referral program",
+            "priority": "High"
+          },
+          {
+            "title": "Belum Ada App Store Presence",
+            "description": "Belum publish di Google Play Store dan Apple App Store",
+            "impact": "High",
+            "details": "Distribusi masih manual via APK/installer, mengurangi trust dan discoverability",
+            "mitigation": "Submit ke Play Store dan App Store, optimize ASO",
+            "priority": "Critical"
+          }
+        ]
+      },
+      {
+        "category": "Fitur & Fungsionalitas",
+        "points": [
+          {
+            "title": "Belum Ada Integrasi Payment Gateway",
+            "description": "Hanya tracking manual untuk pembayaran non-tunai",
+            "impact": "High",
+            "details": "Tidak terintegrasi dengan Midtrans, Xendit, atau payment gateway lain",
+            "mitigation": "Integrasi dengan payment gateway populer di Indonesia",
+            "priority": "High"
+          },
+          {
+            "title": "Tidak Ada Inventory Management Advanced",
+            "description": "Fitur inventory masih basic (stok in/out)",
+            "impact": "Medium",
+            "details": "Tidak ada purchase order, supplier management, stock opname, batch tracking",
+            "mitigation": "Develop modul inventory management lengkap",
+            "priority": "Medium"
+          },
+          {
+            "title": "Belum Ada Multi-Store Support",
+            "description": "Satu akun hanya untuk satu toko",
+            "impact": "Medium",
+            "details": "Tidak bisa manage multiple outlets dari satu dashboard",
+            "mitigation": "Implement multi-store architecture dengan central dashboard",
+            "priority": "Medium"
+          },
+          {
+            "title": "Loyalty Program Belum Ada",
+            "description": "Tidak ada sistem poin atau membership",
+            "impact": "Low",
+            "details": "Fitur customer ada tapi belum ada loyalty/rewards program",
+            "mitigation": "Develop loyalty module dengan poin dan tier membership",
+            "priority": "Low"
+          },
+          {
+            "title": "Tidak Ada E-commerce Integration",
+            "description": "Tidak terintegrasi dengan marketplace atau online store",
+            "impact": "Medium",
+            "details": "Tidak bisa sync dengan Tokopedia, Shopee, atau WooCommerce",
+            "mitigation": "API integration dengan major marketplaces",
+            "priority": "Medium"
+          },
+          {
+            "title": "Reporting Terbatas",
+            "description": "Laporan masih basic, belum ada advanced analytics",
+            "impact": "Medium",
+            "details": "Tidak ada predictive analytics, forecasting, atau business intelligence",
+            "mitigation": "Implement advanced analytics dengan ML/AI",
+            "priority": "Low"
+          }
+        ]
+      },
+      {
+        "category": "Infrastruktur & Skalabilitas",
+        "points": [
+          {
+            "title": "Dependency pada Firebase",
+            "description": "Heavily dependent pada Firebase ecosystem",
+            "impact": "Medium",
+            "details": "Vendor lock-in, biaya bisa meningkat drastis saat scale, limited customization",
+            "mitigation": "Abstraction layer untuk database, consider self-hosted alternative",
+            "priority": "Low"
+          },
+          {
+            "title": "Belum Ada Load Testing",
+            "description": "Tidak ada data tentang performa di scale besar",
+            "impact": "Medium",
+            "details": "Belum ditest dengan 1000+ concurrent users atau 100K+ transactions",
+            "mitigation": "Implement load testing, performance monitoring, optimization",
+            "priority": "Medium"
+          },
+          {
+            "title": "Single Region Deployment",
+            "description": "Server hanya di satu region (Firebase default)",
+            "impact": "Low",
+            "details": "Latency bisa tinggi untuk user di region lain",
+            "mitigation": "Multi-region deployment, CDN untuk static assets",
+            "priority": "Low"
+          }
+        ]
+      },
+      {
+        "category": "User Experience",
+        "points": [
+          {
+            "title": "Learning Curve untuk Desktop Mode",
+            "description": "Keyboard shortcuts perlu waktu untuk dipelajari",
+            "impact": "Low",
+            "details": "User terbiasa dengan mouse, perlu training untuk shortcuts",
+            "mitigation": "Interactive tutorial, cheat sheet, gradual onboarding",
+            "priority": "Low"
+          },
+          {
+            "title": "Mobile UX Belum Optimal",
+            "description": "Beberapa screen kurang optimal untuk layar kecil",
+            "impact": "Medium",
+            "details": "Desktop-first design, beberapa fitur sulit diakses di mobile",
+            "mitigation": "Mobile-first redesign untuk screen tertentu",
+            "priority": "Medium"
+          },
+          {
+            "title": "Tidak Ada Dark Mode Auto",
+            "description": "Dark/light mode manual, tidak follow system preference",
+            "impact": "Low",
+            "details": "User harus manual switch theme",
+            "mitigation": "Auto detect system theme preference",
+            "priority": "Low"
+          }
+        ]
+      },
+      {
+        "category": "Bisnis & Operasional",
+        "points": [
+          {
+            "title": "Belum Ada Customer Support 24/7",
+            "description": "Support masih terbatas jam kerja",
+            "impact": "Medium",
+            "details": "Tidak ada live chat atau phone support, hanya email/docs",
+            "mitigation": "Implement live chat, build support team, knowledge base",
+            "priority": "Medium"
+          },
+          {
+            "title": "Pricing Belum Validated",
+            "description": "Harga subscription belum ditest di market",
+            "impact": "High",
+            "details": "Rp 99K/299K mungkin terlalu murah atau terlalu mahal, belum ada data",
+            "mitigation": "Market research, A/B testing pricing, competitor analysis",
+            "priority": "High"
+          },
+          {
+            "title": "Belum Ada Partnership",
+            "description": "Tidak ada partnership dengan hardware vendor atau distributor",
+            "impact": "Medium",
+            "details": "User harus beli printer/scanner sendiri tanpa rekomendasi",
+            "mitigation": "Partnership dengan printer vendor, reseller program",
+            "priority": "Medium"
+          },
+          {
+            "title": "Monetization Hanya dari Subscription",
+            "description": "Single revenue stream, tidak ada diversifikasi",
+            "impact": "Medium",
+            "details": "Tidak ada revenue dari hardware, training, atau consulting",
+            "mitigation": "Explore additional revenue streams (hardware bundle, premium support)",
+            "priority": "Low"
+          }
+        ]
+      },
+      {
+        "category": "Compliance & Legal",
+        "points": [
+          {
+            "title": "Belum Ada Sertifikasi Pajak",
+            "description": "Tidak terintegrasi dengan sistem perpajakan Indonesia",
+            "impact": "High",
+            "details": "Tidak ada e-Faktur, tidak ada integrasi dengan DJP Online",
+            "mitigation": "Integrasi dengan sistem perpajakan, konsultasi dengan tax consultant",
+            "priority": "High"
+          },
+          {
+            "title": "Privacy Policy & Terms Belum Lengkap",
+            "description": "Legal documents belum comprehensive",
+            "impact": "Medium",
+            "details": "Belum ada privacy policy detail, terms of service, SLA",
+            "mitigation": "Konsultasi dengan legal expert, draft comprehensive legal docs",
+            "priority": "Medium"
+          },
+          {
+            "title": "Belum GDPR/Privacy Compliant",
+            "description": "Tidak ada fitur untuk data privacy compliance",
+            "impact": "Low",
+            "details": "Tidak ada data export, right to be forgotten, consent management",
+            "mitigation": "Implement privacy compliance features",
+            "priority": "Low"
+          }
+        ]
+      },
+      {
+        "category": "Teknis",
+        "points": [
+          {
+            "title": "Test Coverage Rendah",
+            "description": "Belum ada automated testing comprehensive",
+            "impact": "Medium",
+            "details": "Tidak ada unit tests, integration tests, atau E2E tests",
+            "mitigation": "Implement testing framework, achieve 80%+ coverage",
+            "priority": "Medium"
+          },
+          {
+            "title": "Dokumentasi API Belum Ada",
+            "description": "Tidak ada public API atau dokumentasi untuk integration",
+            "impact": "Low",
+            "details": "Third-party tidak bisa integrate dengan BetaKasir",
+            "mitigation": "Build REST API, create API documentation",
+            "priority": "Low"
+          },
+          {
+            "title": "Monitoring & Alerting Minimal",
+            "description": "Tidak ada comprehensive monitoring system",
+            "impact": "Medium",
+            "details": "Tidak ada uptime monitoring, error tracking, performance monitoring",
+            "mitigation": "Implement Sentry, New Relic, atau monitoring tools",
+            "priority": "Medium"
+          }
+        ]
+      }
+    ],
+    "summary": "Kelemahan utama ada di penetrasi pasar dan brand awareness. Secara teknis aplikasi solid, namun perlu penambahan fitur enterprise dan compliance untuk kompetisi di pasar yang lebih besar."
+  },
+  "opportunities": {
+    "title": "PELUANG (Opportunities)",
+    "description": "Faktor eksternal yang dapat dimanfaatkan untuk pertumbuhan",
+    "items": [
+      {
+        "category": "Pasar & Industri",
+        "points": [
+          {
+            "title": "Pertumbuhan UMKM Indonesia",
+            "description": "64+ juta UMKM di Indonesia, 99% dari total bisnis",
+            "impact": "Critical",
+            "details": "Pasar potensial sangat besar, mayoritas belum menggunakan POS digital",
+            "market_size": "64 juta UMKM, penetrasi POS < 10%",
+            "potential_revenue": "Rp 6.4 Triliun (jika 1% adopt dengan Rp 100K/bulan)",
+            "timeline": "2025-2030",
+            "action_items": [
+              "Target 10,000 users di tahun pertama",
+              "Focus pada warung, toko kelontong, dan retail kecil",
+              "Partnership dengan komunitas UMKM"
+            ]
+          },
+          {
+            "title": "Digitalisasi UMKM Post-Pandemic",
+            "description": "Akselerasi adopsi teknologi digital pasca COVID-19",
+            "impact": "High",
+            "details": "UMKM dipaksa digital, pemerintah mendorong digitalisasi UMKM",
+            "market_size": "Program pemerintah target 30 juta UMKM digital 2024",
+            "potential_revenue": "Subsidi/grant pemerintah untuk digitalisasi",
+            "timeline": "2024-2026",
+            "action_items": [
+              "Apply untuk program pemerintah (Kemenkop, Kominfo)",
+              "Partnership dengan bank untuk financing",
+              "Edukasi digital literacy"
+            ]
+          },
+          {
+            "title": "Shift dari Manual ke Digital",
+            "description": "Transisi dari buku kas manual ke sistem digital",
+            "impact": "High",
+            "details": "Mayoritas UMKM masih pakai buku tulis, peluang besar untuk konversi",
+            "market_size": "50+ juta UMKM masih manual",
+            "potential_revenue": "Low-hanging fruit dengan freemium model",
+            "timeline": "Ongoing",
+            "action_items": [
+              "Campaign 'Tinggalkan Buku Kas'",
+              "Free migration service dari manual",
+              "Success stories dari early adopters"
+            ]
+          },
+          {
+            "title": "Pertumbuhan E-commerce",
+            "description": "Integrasi online-offline (O2O) semakin penting",
+            "impact": "High",
+            "details": "UMKM perlu manage toko fisik + online store secara terintegrasi",
+            "market_size": "E-commerce Indonesia $50B+ tahun 2025",
+            "potential_revenue": "Premium feature untuk O2O integration",
+            "timeline": "2025-2027",
+            "action_items": [
+              "Integrasi dengan Tokopedia, Shopee, Lazada",
+              "Unified inventory management",
+              "Omnichannel reporting"
+            ]
+          }
+        ]
+      },
+      {
+        "category": "Teknologi",
+        "points": [
+          {
+            "title": "AI & Machine Learning",
+            "description": "Implementasi AI untuk predictive analytics dan automation",
+            "impact": "Medium",
+            "details": "Demand forecasting, dynamic pricing, chatbot customer service",
+            "market_size": "AI-powered POS market growing 25% CAGR",
+            "potential_revenue": "Premium AI features Rp 50K-100K/bulan extra",
+            "timeline": "2025-2026",
+            "action_items": [
+              "Sales forecasting dengan ML",
+              "Smart inventory recommendations",
+              "AI-powered customer insights"
+            ]
+          },
+          {
+            "title": "IoT & Smart Devices",
+            "description": "Integrasi dengan smart scales, smart shelves, IoT sensors",
+            "impact": "Medium",
+            "details": "Automated inventory tracking, real-time stock monitoring",
+            "market_size": "IoT retail market $30B globally by 2027",
+            "potential_revenue": "Hardware bundle + software subscription",
+            "timeline": "2026-2028",
+            "action_items": [
+              "Partnership dengan IoT hardware vendors",
+              "Develop IoT SDK/API",
+              "Pilot project dengan early adopters"
+            ]
+          },
+          {
+            "title": "Cloud & Edge Computing",
+            "description": "Hybrid cloud-edge untuk performa optimal",
+            "impact": "Low",
+            "details": "Edge computing untuk transaksi offline, cloud untuk analytics",
+            "market_size": "Edge computing market $15B by 2027",
+            "potential_revenue": "Enterprise tier dengan edge deployment",
+            "timeline": "2027+",
+            "action_items": [
+              "Research edge computing solutions",
+              "Pilot dengan enterprise customers",
+              "Optimize for low-bandwidth scenarios"
+            ]
+          }
+        ]
+      },
+      {
+        "category": "Partnership & Kolaborasi",
+        "points": [
+          {
+            "title": "Partnership dengan Bank",
+            "description": "Kolaborasi dengan bank untuk financing dan payment",
+            "impact": "High",
+            "details": "BCA, Mandiri, BRI punya program UMKM, bisa bundle dengan POS",
+            "market_size": "Akses ke customer base bank (jutaan UMKM)",
+            "potential_revenue": "Commission dari financing, payment gateway fee",
+            "timeline": "2025",
+            "action_items": [
+              "Approach BCA, Mandiri, BRI untuk partnership",
+              "Develop white-label solution untuk bank",
+              "Integrate dengan mobile banking"
+            ]
+          },
+          {
+            "title": "Reseller & Distributor Network",
+            "description": "Build network reseller untuk distribusi",
+            "impact": "High",
+            "details": "Leverage existing distributor hardware POS untuk bundle software",
+            "market_size": "100+ distributor POS hardware di Indonesia",
+            "potential_revenue": "Revenue sharing 30-40% untuk reseller",
+            "timeline": "2025-2026",
+            "action_items": [
+              "Recruit reseller di kota-kota besar",
+              "Training program untuk reseller",
+              "Reseller portal & incentive program"
+            ]
+          },
+          {
+            "title": "Franchise & Chain Store",
+            "description": "Target franchise dan chain store untuk volume",
+            "impact": "Medium",
+            "details": "Indomaret, Alfamart, franchise F&B perlu POS untuk semua outlet",
+            "market_size": "10,000+ franchise outlets di Indonesia",
+            "potential_revenue": "Enterprise contract Rp 10-50 juta/tahun",
+            "timeline": "2026-2027",
+            "action_items": [
+              "Develop multi-store management",
+              "Central dashboard untuk franchise owner",
+              "Custom features untuk franchise"
+            ]
+          },
+          {
+            "title": "Government Programs",
+            "description": "Participate dalam program digitalisasi pemerintah",
+            "impact": "Medium",
+            "details": "Kemenkop, Kominfo, Bekraf punya budget untuk digitalisasi UMKM",
+            "market_size": "Budget pemerintah triliunan untuk digitalisasi",
+            "potential_revenue": "Grant, subsidi, atau bulk purchase",
+            "timeline": "2025",
+            "action_items": [
+              "Register sebagai vendor pemerintah",
+              "Submit proposal untuk program digitalisasi",
+              "Compliance dengan procurement requirements"
+            ]
+          }
+        ]
+      },
+      {
+        "category": "Ekspansi Geografis",
+        "points": [
+          {
+            "title": "Ekspansi ke Tier 2-3 Cities",
+            "description": "Penetrasi ke kota-kota kecil di Indonesia",
+            "impact": "High",
+            "details": "Kompetisi lebih rendah, UMKM lebih banyak, harga lebih sensitif",
+            "market_size": "70% UMKM ada di luar Jakarta",
+            "potential_revenue": "Volume tinggi dengan pricing lebih rendah",
+            "timeline": "2025-2026",
+            "action_items": [
+              "Localized marketing untuk setiap region",
+              "Partnership dengan distributor lokal",
+              "Pricing strategy untuk tier 2-3"
+            ]
+          },
+          {
+            "title": "Ekspansi Regional (ASEAN)",
+            "description": "Ekspansi ke negara ASEAN lain",
+            "impact": "Medium",
+            "details": "Malaysia, Thailand, Vietnam, Filipina punya market similar",
+            "market_size": "100+ juta UMKM di ASEAN",
+            "potential_revenue": "5x market size Indonesia",
+            "timeline": "2027-2028",
+            "action_items": [
+              "Localization (bahasa, currency, tax)",
+              "Partnership dengan local players",
+              "Compliance dengan local regulations"
+            ]
+          }
+        ]
+      },
+      {
+        "category": "Produk & Layanan Baru",
+        "points": [
+          {
+            "title": "Hardware Bundle",
+            "description": "Jual hardware (printer, scanner, tablet) bundle dengan software",
+            "impact": "High",
+            "details": "One-stop solution, higher margin, customer lock-in",
+            "market_size": "Hardware POS market Rp 5 Triliun/tahun",
+            "potential_revenue": "Margin 20-30% dari hardware sales",
+            "timeline": "2025",
+            "action_items": [
+              "Source hardware dari China/local",
+              "Create starter pack (tablet + printer + scanner)",
+              "Financing option untuk hardware"
+            ]
+          },
+          {
+            "title": "Training & Consulting",
+            "description": "Layanan training dan consulting untuk enterprise",
+            "impact": "Medium",
+            "details": "On-site training, business process consulting, customization",
+            "market_size": "Enterprise willing to pay for premium support",
+            "potential_revenue": "Rp 5-20 juta per project",
+            "timeline": "2026",
+            "action_items": [
+              "Build consulting team",
+              "Create training curriculum",
+              "Case studies & success stories"
+            ]
+          },
+          {
+            "title": "White-Label Solution",
+            "description": "Jual white-label POS untuk bank, telco, atau corporate",
+            "impact": "Medium",
+            "details": "Customize branding untuk corporate client",
+            "market_size": "Bank, telco, corporate dengan UMKM program",
+            "potential_revenue": "Rp 100 juta - 1 Miliar per contract",
+            "timeline": "2026-2027",
+            "action_items": [
+              "Develop white-label framework",
+              "Sales team untuk enterprise",
+              "Custom development capability"
+            ]
+          },
+          {
+            "title": "Marketplace & Ecosystem",
+            "description": "Build marketplace untuk third-party apps/plugins",
+            "impact": "Low",
+            "details": "Developer ecosystem, app store, revenue sharing",
+            "market_size": "Similar to Shopify app store model",
+            "potential_revenue": "30% commission dari app sales",
+            "timeline": "2027+",
+            "action_items": [
+              "Open API untuk developers",
+              "Developer documentation & SDK",
+              "App review & approval process"
+            ]
+          }
+        ]
+      },
+      {
+        "category": "Funding & Investment",
+        "points": [
+          {
+            "title": "Venture Capital Funding",
+            "description": "Raise funding dari VC untuk growth acceleration",
+            "impact": "High",
+            "details": "SaaS B2B startup attractive untuk VC, proven business model",
+            "market_size": "VC funding untuk SaaS Indonesia $500M+/tahun",
+            "potential_revenue": "Seed: $500K-1M, Series A: $3-5M",
+            "timeline": "2025-2026",
+            "action_items": [
+              "Prepare pitch deck & financial model",
+              "Build traction (10K+ users, $100K+ ARR)",
+              "Network dengan VC ecosystem"
+            ]
+          },
+          {
+            "title": "Strategic Investment",
+            "description": "Investment dari strategic partner (bank, telco, retail)",
+            "impact": "Medium",
+            "details": "Strategic value beyond money: distribution, customer base",
+            "market_size": "Corporate VC active di Indonesia",
+            "potential_revenue": "$1-5M dengan strategic benefits",
+            "timeline": "2026",
+            "action_items": [
+              "Identify potential strategic partners",
+              "Pilot projects untuk proof of concept",
+              "Negotiate win-win partnership"
+            ]
+          }
+        ]
+      }
+    ],
+    "summary": "Peluang terbesar ada di pasar UMKM Indonesia yang sangat besar (64 juta) dengan penetrasi POS digital yang masih rendah. Partnership dengan bank dan distributor bisa accelerate growth significantly."
+  },
+  "threats": {
+    "title": "ANCAMAN (Threats)",
+    "description": "Faktor eksternal yang dapat menghambat pertumbuhan atau mengancam bisnis",
+    "items": [
+      {
+        "category": "Kompetisi",
+        "points": [
+          {
+            "title": "Kompetitor Established",
+            "description": "Moka, Pawoon, iReap, Olsera sudah punya market share besar",
+            "impact": "Critical",
+            "details": "Kompetitor punya brand recognition, customer base, dan funding besar",
+            "competitors": [
+              {
+                "name": "Moka (Gojek)",
+                "strength": "Backed by Gojek, 100K+ merchants, ecosystem integration",
+                "market_share": "~30%"
+              },
+              {
+                "name": "Pawoon",
+                "strength": "Fokus F&B, 50K+ merchants, hardware bundle",
+                "market_share": "~20%"
+              },
+              {
+                "name": "iReap POS",
+                "strength": "Established (2014), 30K+ users, multi-industry",
+                "market_share": "~15%"
+              },
+              {
+                "name": "Olsera",
+                "strength": "F&B specialist, 20K+ merchants, strong in Bali",
+                "market_share": "~10%"
+              },
+              {
+                "name": "Qasir",
+                "strength": "Freemium model, 100K+ downloads, simple UX",
+                "market_share": "~15%"
+              }
+            ],
+            "mitigation": [
+              "Differentiate dengan fitur unique (AI assistant, desktop mode)",
+              "Target niche market yang underserved",
+              "Compete on price dengan freemium model",
+              "Superior customer service"
+            ],
+            "severity": "High"
+          },
+          {
+            "title": "Price War",
+            "description": "Kompetitor bisa turunkan harga atau kasih gratis",
+            "impact": "High",
+            "details": "Kompetitor dengan funding besar bisa subsidi harga untuk market share",
+            "mitigation": [
+              "Focus pada value, bukan harga",
+              "Build switching cost (data lock-in, training)",
+              "Differentiate dengan fitur premium",
+              "Efficient operation untuk maintain margin"
+            ],
+            "severity": "High"
+          },
+          {
+            "title": "New Entrants",
+            "description": "Barrier to entry rendah, banyak startup baru",
+            "impact": "Medium",
+            "details": "Tech stack modern mudah diakses, bisa build POS dalam 3-6 bulan",
+            "mitigation": [
+              "Build moat dengan network effect",
+              "Continuous innovation",
+              "Strong brand & community",
+              "Patent/IP protection untuk fitur unique"
+            ],
+            "severity": "Medium"
+          },
+          {
+            "title": "Big Tech Entry",
+            "description": "Google, Microsoft, atau tech giant masuk ke POS market",
+            "impact": "Medium",
+            "details": "Google Pay, Microsoft Dynamics bisa expand ke SME POS",
+            "mitigation": [
+              "Focus pada local market knowledge",
+              "Agility & fast iteration",
+              "Deep integration dengan local ecosystem",
+              "Niche specialization"
+            ],
+            "severity": "Medium"
+          }
+        ]
+      },
+      {
+        "category": "Teknologi",
+        "points": [
+          {
+            "title": "Technology Disruption",
+            "description": "New technology bisa obsolete current solution",
+            "impact": "Medium",
+            "details": "Blockchain, Web3, atau teknologi baru bisa change game",
+            "mitigation": [
+              "Stay updated dengan tech trends",
+              "R&D budget untuk innovation",
+              "Flexible architecture untuk adoption",
+              "Partnership dengan tech innovators"
+            ],
+            "severity": "Low"
+          },
+          {
+            "title": "Cybersecurity Threats",
+            "description": "Data breach, hacking, atau security incident",
+            "impact": "High",
+            "details": "POS system handle sensitive data (transaksi, customer, finansial)",
+            "mitigation": [
+              "Regular security audit",
+              "Penetration testing",
+              "Compliance dengan security standards",
+              "Cyber insurance",
+              "Incident response plan"
+            ],
+            "severity": "High"
+          },
+          {
+            "title": "Platform Dependency Risk",
+            "description": "Firebase, Expo, atau platform lain bisa change policy/pricing",
+            "impact": "Medium",
+            "details": "Vendor lock-in, pricing increase, service discontinuation",
+            "mitigation": [
+              "Abstraction layer untuk critical dependencies",
+              "Multi-cloud strategy",
+              "Self-hosted option untuk enterprise",
+              "Regular evaluation of alternatives"
+            ],
+            "severity": "Medium"
+          },
+          {
+            "title": "Mobile OS Changes",
+            "description": "iOS/Android update bisa break compatibility",
+            "impact": "Low",
+            "details": "Major OS updates kadang break existing apps",
+            "mitigation": [
+              "Stay updated dengan OS beta programs",
+              "Automated testing untuk new OS versions",
+              "Quick response team untuk fixes",
+              "Web fallback option"
+            ],
+            "severity": "Low"
+          }
+        ]
+      },
+      {
+        "category": "Regulasi & Compliance",
+        "points": [
+          {
+            "title": "Perubahan Regulasi Pajak",
+            "description": "Pemerintah bisa wajibkan integrasi dengan sistem pajak",
+            "impact": "High",
+            "details": "e-Faktur, DJP Online integration bisa jadi mandatory",
+            "mitigation": [
+              "Proactive compliance development",
+              "Lobby dengan asosiasi industri",
+              "Partnership dengan tax consultant",
+              "Budget untuk compliance features"
+            ],
+            "severity": "High"
+          },
+          {
+            "title": "Data Privacy Regulations",
+            "description": "UU PDP (Perlindungan Data Pribadi) enforcement",
+            "impact": "Medium",
+            "details": "Compliance requirements bisa costly, penalty bisa besar",
+            "mitigation": [
+              "Implement privacy by design",
+              "Data protection officer",
+              "Regular compliance audit",
+              "User consent management"
+            ],
+            "severity": "Medium"
+          },
+          {
+            "title": "Licensing Requirements",
+            "description": "Pemerintah bisa require license untuk POS software",
+            "impact": "Low",
+            "details": "Seperti di beberapa negara, POS software perlu certified",
+            "mitigation": [
+              "Monitor regulatory developments",
+              "Join industry associations",
+              "Prepare for certification process",
+              "Compliance budget allocation"
+            ],
+            "severity": "Low"
+          },
+          {
+            "title": "Payment Regulations",
+            "description": "BI/OJK regulations untuk payment processing",
+            "impact": "Medium",
+            "details": "Jika integrate payment gateway, perlu comply dengan BI/OJK",
+            "mitigation": [
+              "Work dengan licensed payment partners",
+              "Legal consultation",
+              "Compliance documentation",
+              "Regular audit"
+            ],
+            "severity": "Medium"
+          }
+        ]
+      },
+      {
+        "category": "Ekonomi & Pasar",
+        "points": [
+          {
+            "title": "Economic Downturn",
+            "description": "Resesi atau economic crisis bisa reduce spending",
+            "impact": "High",
+            "details": "UMKM cut costs, subscription jadi expense yang bisa dihilangkan",
+            "mitigation": [
+              "Flexible pricing (monthly vs annual)",
+              "Freemium model untuk retain users",
+              "Focus pada ROI & cost savings",
+              "Diversify customer segments"
+            ],
+            "severity": "High"
+          },
+          {
+            "title": "Currency Fluctuation",
+            "description": "Rupiah depreciation affect costs (cloud, tools)",
+            "impact": "Medium",
+            "details": "Firebase, AWS, tools mostly USD-based, costs increase jika rupiah lemah",
+            "mitigation": [
+              "Hedge currency risk",
+              "Local infrastructure option",
+              "Price adjustment mechanism",
+              "Cost optimization"
+            ],
+            "severity": "Medium"
+          },
+          {
+            "title": "Market Saturation",
+            "description": "POS market bisa saturated dalam 5-10 tahun",
+            "impact": "Medium",
+            "details": "Semua UMKM sudah pakai POS, growth melambat",
+            "mitigation": [
+              "Expand to new verticals",
+              "International expansion",
+              "New product lines",
+              "Focus on retention & upsell"
+            ],
+            "severity": "Low"
+          },
+          {
+            "title": "Customer Churn",
+            "description": "High churn rate bisa kill growth",
+            "impact": "High",
+            "details": "SaaS business model sensitive to churn, need <5% monthly churn",
+            "mitigation": [
+              "Excellent onboarding",
+              "Proactive customer success",
+              "Regular feature updates",
+              "Community building",
+              "Long-term contracts with discount"
+            ],
+            "severity": "High"
+          }
+        ]
+      },
+      {
+        "category": "Operasional",
+        "points": [
+          {
+            "title": "Talent Acquisition & Retention",
+            "description": "Sulit recruit & retain top talent",
+            "impact": "High",
+            "details": "Kompetisi untuk developer, product manager, sales talent sangat ketat",
+            "mitigation": [
+              "Competitive compensation",
+              "Stock options/ESOP",
+              "Good company culture",
+              "Remote work flexibility",
+              "Career development program"
+            ],
+            "severity": "High"
+          },
+          {
+            "title": "Scaling Challenges",
+            "description": "Operational complexity increase dengan scale",
+            "impact": "Medium",
+            "details": "Customer support, infrastructure, team management jadi complex",
+            "mitigation": [
+              "Invest in automation",
+              "Scalable processes & systems",
+              "Hire experienced operators",
+              "Outsource non-core functions"
+            ],
+            "severity": "Medium"
+          },
+          {
+            "title": "Cash Flow Issues",
+            "description": "Burn rate tinggi sebelum profitable",
+            "impact": "High",
+            "details": "SaaS business need 2-3 tahun untuk profitable, cash flow critical",
+            "mitigation": [
+              "Raise sufficient funding",
+              "Lean operation",
+              "Focus on unit economics",
+              "Annual prepayment discount",
+              "Revenue diversification"
+            ],
+            "severity": "High"
+          },
+          {
+            "title": "Service Downtime",
+            "description": "System downtime bisa damage reputation",
+            "impact": "High",
+            "details": "POS system critical untuk business operation, downtime = lost sales",
+            "mitigation": [
+              "99.9% uptime SLA",
+              "Redundancy & failover",
+              "24/7 monitoring",
+              "Incident response team",
+              "Offline mode capability"
+            ],
+            "severity": "High"
+          }
+        ]
+      },
+      {
+        "category": "Reputasi & Brand",
+        "points": [
+          {
+            "title": "Negative Reviews",
+            "description": "Bad reviews di social media atau app store",
+            "impact": "Medium",
+            "details": "Viral negative review bisa damage brand significantly",
+            "mitigation": [
+              "Proactive customer service",
+              "Quick response to complaints",
+              "Reputation monitoring",
+              "Encourage positive reviews",
+              "Transparent communication"
+            ],
+            "severity": "Medium"
+          },
+          {
+            "title": "Data Breach Incident",
+            "description": "Security incident bisa destroy trust",
+            "impact": "Critical",
+            "details": "One major breach bisa end business, especially untuk financial data",
+            "mitigation": [
+              "Best-in-class security",
+              "Regular security audit",
+              "Cyber insurance",
+              "Incident response plan",
+              "Transparent communication"
+            ],
+            "severity": "Critical"
+          },
+          {
+            "title": "Competitor FUD",
+            "description": "Kompetitor spread fear, uncertainty, doubt",
+            "impact": "Low",
+            "details": "Negative marketing dari kompetitor",
+            "mitigation": [
+              "Strong brand positioning",
+              "Transparent communication",
+              "Customer testimonials",
+              "Third-party validation",
+              "Focus on product quality"
+            ],
+            "severity": "Low"
+          }
+        ]
+      }
+    ],
+    "summary": "Ancaman terbesar adalah kompetisi dari player established dengan funding dan market share besar. Risk operasional seperti talent, cash flow, dan downtime juga critical untuk di-manage."
+  },
+  "strategic_recommendations": {
+    "title": "REKOMENDASI STRATEGIS",
+    "description": "Action plan berdasarkan analisis SWOT",
+    "short_term": {
+      "title": "Short-Term (0-12 Bulan)",
+      "priority": "Critical",
+      "focus": "Product-Market Fit & Initial Traction",
+      "strategies": [
+        {
+          "strategy": "Launch & Distribution",
+          "actions": [
+            "Publish ke Google Play Store dan Apple App Store (Q1 2025)",
+            "Optimize ASO (App Store Optimization) untuk discoverability",
+            "Build landing page & website untuk marketing",
+            "Setup analytics & tracking (Google Analytics, Mixpanel)",
+            "Create demo video & tutorial content"
+          ],
+          "kpi": [
+            "10,000 downloads dalam 6 bulan",
+            "1,000 active users (MAU)",
+            "100 paying customers",
+            "Rp 10 juta MRR (Monthly Recurring Revenue)"
+          ],
+          "budget": "Rp 50-100 juta",
+          "owner": "Product & Marketing Team"
+        },
+        {
+          "strategy": "Product Development",
+          "actions": [
+            "Integrasi payment gateway (Midtrans/Xendit) - Priority 1",
+            "Integrasi perpajakan (e-Faktur) - Priority 2",
+            "Improve mobile UX untuk screen critical",
+            "Add automated testing (unit + integration tests)",
+            "Implement monitoring & alerting (Sentry, New Relic)"
+          ],
+          "kpi": [
+            "2 major features per quarter",
+            "80%+ test coverage",
+            "99.5% uptime",
+            "< 5% monthly churn"
+          ],
+          "budget": "Rp 100-200 juta (development cost)",
+          "owner": "Engineering Team"
+        },
+        {
+          "strategy": "Go-to-Market",
+          "actions": [
+            "Content marketing (blog, social media, YouTube)",
+            "Partnership dengan komunitas UMKM (HIPMI, Kadin)",
+            "Referral program (refer a friend, get 1 month free)",
+            "Free trial campaign (14 hari → 30 hari)",
+            "Case studies dari early adopters"
+          ],
+          "kpi": [
+            "1,000 website visitors/day",
+            "20% trial-to-paid conversion",
+            "30% referral rate",
+            "10 case studies published"
+          ],
+          "budget": "Rp 50-100 juta (marketing)",
+          "owner": "Marketing & Sales Team"
+        },
+        {
+          "strategy": "Customer Success",
+          "actions": [
+            "Setup customer support (email, chat, phone)",
+            "Create knowledge base & FAQ",
+            "Onboarding program untuk new users",
+            "Regular check-in dengan paying customers",
+            "Collect feedback & feature requests"
+          ],
+          "kpi": [
+            "< 24 jam response time",
+            "90%+ customer satisfaction",
+            "< 5% monthly churn",
+            "50+ feature requests collected"
+          ],
+          "budget": "Rp 30-50 juta (support team)",
+          "owner": "Customer Success Team"
+        }
+      ],
+      "total_budget": "Rp 230-450 juta",
+      "expected_outcome": "Product-market fit validated, 1,000+ active users, Rp 10-20 juta MRR"
+    },
+    "medium_term": {
+      "title": "Medium-Term (12-24 Bulan)",
+      "priority": "High",
+      "focus": "Scale & Growth",
+      "strategies": [
+        {
+          "strategy": "Market Expansion",
+          "actions": [
+            "Ekspansi ke tier 2-3 cities (Bandung, Surabaya, Medan, Makassar)",
+            "Partnership dengan bank (BCA, Mandiri, BRI) untuk financing",
+            "Reseller program untuk distributor hardware",
+            "Government program participation (Kemenkop, Kominfo)",
+            "Franchise & chain store targeting"
+          ],
+          "kpi": [
+            "50,000 active users",
+            "5,000 paying customers",
+            "Rp 500 juta MRR",
+            "50+ resellers",
+            "10+ enterprise contracts"
+          ],
+          "budget": "Rp 500 juta - 1 Miliar",
+          "owner": "Sales & BD Team"
+        },
+        {
+          "strategy": "Product Enhancement",
+          "actions": [
+            "Multi-store management untuk franchise",
+            "Advanced inventory management (PO, supplier, stock opname)",
+            "E-commerce integration (Tokopedia, Shopee, Lazada)",
+            "Loyalty program & membership",
+            "Advanced analytics & reporting (ML-powered)"
+          ],
+          "kpi": [
+            "5 major features launched",
+            "50% feature adoption rate",
+            "NPS score > 50",
+            "< 3% monthly churn"
+          ],
+          "budget": "Rp 500 juta - 1 Miliar",
+          "owner": "Product & Engineering"
+        },
+        {
+          "strategy": "Hardware Bundle",
+          "actions": [
+            "Source hardware (printer, scanner, tablet) dari supplier",
+            "Create starter pack bundles",
+            "Financing option untuk hardware purchase",
+            "Partnership dengan hardware vendors",
+            "Warranty & support untuk hardware"
+          ],
+          "kpi": [
+            "1,000 hardware bundles sold",
+            "Rp 2-5 Miliar hardware revenue",
+            "30% margin dari hardware",
+            "90%+ customer satisfaction"
+          ],
+          "budget": "Rp 200-500 juta (inventory)",
+          "owner": "Operations & Sales"
+        },
+        {
+          "strategy": "Fundraising",
+          "actions": [
+            "Prepare pitch deck & financial model",
+            "Build traction untuk investor (10K+ users, Rp 100 juta+ MRR)",
+            "Network dengan VC ecosystem",
+            "Seed round fundraising ($500K - $1M)",
+            "Strategic partnership discussions"
+          ],
+          "kpi": [
+            "Seed funding secured: $500K - $1M",
+            "3-5 strategic partnerships",
+            "Valuation: $3-5M",
+            "18-24 months runway"
+          ],
+          "budget": "Rp 50-100 juta (fundraising cost)",
+          "owner": "CEO & CFO"
+        }
+      ],
+      "total_budget": "Rp 1.25 - 2.6 Miliar (+ seed funding)",
+      "expected_outcome": "50K users, Rp 500 juta MRR, seed funding secured, profitable unit economics"
+    },
+    "long_term": {
+      "title": "Long-Term (24-60 Bulan)",
+      "priority": "Medium",
+      "focus": "Market Leadership & Expansion",
+      "strategies": [
+        {
+          "strategy": "Market Leadership",
+          "actions": [
+            "Target 10% market share di Indonesia (6 juta UMKM)",
+            "Brand building & awareness campaign",
+            "Thought leadership (conference, media, publication)",
+            "Industry awards & recognition",
+            "Community building (user conference, meetups)"
+          ],
+          "kpi": [
+            "500,000 active users",
+            "50,000 paying customers",
+            "Rp 5 Miliar MRR",
+            "Top 3 POS brand di Indonesia",
+            "90+ NPS score"
+          ],
+          "budget": "Rp 5-10 Miliar/tahun",
+          "owner": "Executive Team"
+        },
+        {
+          "strategy": "International Expansion",
+          "actions": [
+            "Ekspansi ke ASEAN (Malaysia, Thailand, Vietnam, Filipina)",
+            "Localization (bahasa, currency, tax, compliance)",
+            "Partnership dengan local players",
+            "Local team & operations",
+            "Market research & adaptation"
+          ],
+          "kpi": [
+            "100,000 international users",
+            "10,000 paying customers",
+            "Rp 1 Miliar MRR dari international",
+            "Presence di 5+ countries"
+          ],
+          "budget": "Rp 10-20 Miliar",
+          "owner": "International Team"
+        },
+        {
+          "strategy": "Platform & Ecosystem",
+          "actions": [
+            "Open API untuk third-party integration",
+            "App marketplace untuk plugins & extensions",
+            "Developer program & SDK",
+            "White-label solution untuk enterprise",
+            "Acquisition strategy (buy competitors/complementary products)"
+          ],
+          "kpi": [
+            "100+ third-party apps",
+            "10,000+ developers",
+            "Rp 500 juta/bulan dari marketplace",
+            "5+ white-label contracts",
+            "2-3 acquisitions"
+          ],
+          "budget": "Rp 20-50 Miliar",
+          "owner": "Platform Team"
+        },
+        {
+          "strategy": "Series A & Beyond",
+          "actions": [
+            "Series A fundraising ($5-10M)",
+            "Series B preparation ($20-30M)",
+            "IPO consideration (5-7 years)",
+            "M&A opportunities evaluation",
+            "Exit strategy planning"
+          ],
+          "kpi": [
+            "Series A: $5-10M raised",
+            "Valuation: $50-100M",
+            "Profitability achieved",
+            "Path to IPO clear"
+          ],
+          "budget": "Varies based on funding",
+          "owner": "Board & Investors"
+        }
+      ],
+      "total_budget": "Rp 35-80 Miliar (+ Series A/B funding)",
+      "expected_outcome": "Market leader di Indonesia, regional presence, profitable, unicorn potential"
+    }
+  },
+  "swot_matrix": {
+    "title": "SWOT MATRIX - Strategic Options",
+    "description": "Kombinasi SWOT untuk generate strategic options",
+    "so_strategies": {
+      "title": "SO (Strengths-Opportunities)",
+      "description": "Leverage strengths untuk capitalize opportunities",
+      "strategies": [
+        "Gunakan multi-platform capability untuk penetrasi pasar UMKM yang besar",
+        "Leverage offline-first architecture untuk target UMKM di daerah dengan internet terbatas",
+        "Partnership dengan bank menggunakan teknologi modern sebagai selling point",
+        "AI Assistant sebagai differentiator untuk attract tech-savvy UMKM",
+        "Freemium model untuk capture market share dari manual-to-digital transition"
+      ]
+    },
+    "wo_strategies": {
+      "title": "WO (Weaknesses-Opportunities)",
+      "description": "Overcome weaknesses dengan memanfaatkan opportunities",
+      "strategies": [
+        "Partnership dengan bank/distributor untuk overcome brand awareness issue",
+        "Government program participation untuk gain credibility & customer base",
+        "Hardware bundle untuk compete dengan established players",
+        "Reseller network untuk overcome limited sales team",
+        "White-label solution untuk enterprise untuk overcome lack of enterprise features"
+      ]
+    },
+    "st_strategies": {
+      "title": "ST (Strengths-Threats)",
+      "description": "Use strengths untuk mitigate threats",
+      "strategies": [
+        "Differentiate dengan unique features (AI, desktop mode) untuk compete dengan established players",
+        "Offline-first architecture sebagai moat against cloud-only competitors",
+        "Superior technology stack untuk faster innovation vs competitors",
+        "Multi-platform support untuk reduce platform dependency risk",
+        "Strong documentation & support untuk reduce churn"
+      ]
+    },
+    "wt_strategies": {
+      "title": "WT (Weaknesses-Threats)",
+      "description": "Minimize weaknesses dan avoid threats",
+      "strategies": [
+        "Focus pada niche market untuk avoid direct competition dengan big players",
+        "Build strong customer relationship untuk reduce churn risk",
+        "Invest in security & compliance untuk mitigate regulatory risk",
+        "Diversify revenue streams untuk reduce economic downturn impact",
+        "Build talent pipeline untuk mitigate talent acquisition risk"
+      ]
+    }
+  },
+  "key_success_factors": {
+    "title": "FAKTOR KUNCI KESUKSESAN",
+    "description": "Critical success factors untuk BetaKasir",
+    "factors": [
+      {
+        "factor": "Product-Market Fit",
+        "description": "Produk harus solve real pain points UMKM",
+        "importance": "Critical",
+        "current_status": "In Progress",
+        "action": "Intensive user research, rapid iteration, feature validation"
+      },
+      {
+        "factor": "Customer Acquisition Cost (CAC)",
+        "description": "CAC harus < 3x LTV untuk sustainable growth",
+        "importance": "Critical",
+        "current_status": "To Be Measured",
+        "action": "Track CAC by channel, optimize marketing spend, improve conversion"
+      },
+      {
+        "factor": "Customer Retention",
+        "description": "Monthly churn harus < 5% untuk SaaS success",
+        "importance": "Critical",
+        "current_status": "To Be Measured",
+        "action": "Excellent onboarding, proactive support, regular engagement"
+      },
+      {
+        "factor": "Unit Economics",
+        "description": "LTV/CAC ratio > 3, payback period < 12 months",
+        "importance": "Critical",
+        "current_status": "To Be Validated",
+        "action": "Optimize pricing, reduce CAC, increase retention"
+      },
+      {
+        "factor": "Technology Scalability",
+        "description": "System harus handle 100K+ concurrent users",
+        "importance": "High",
+        "current_status": "Not Tested",
+        "action": "Load testing, performance optimization, infrastructure planning"
+      },
+      {
+        "factor": "Team Execution",
+        "description": "Strong team dengan execution capability",
+        "importance": "Critical",
+        "current_status": "Building",
+        "action": "Hire A-players, build culture, clear OKRs"
+      },
+      {
+        "factor": "Funding & Cash Flow",
+        "description": "Sufficient runway untuk reach profitability",
+        "importance": "Critical",
+        "current_status": "Bootstrapped",
+        "action": "Raise seed funding, manage burn rate, focus on revenue"
+      },
+      {
+        "factor": "Competitive Differentiation",
+        "description": "Clear differentiation vs competitors",
+        "importance": "High",
+        "current_status": "Defined",
+        "action": "Strengthen unique features, build moat, brand positioning"
+      },
+      {
+        "factor": "Regulatory Compliance",
+        "description": "Comply dengan tax, privacy, dan industry regulations",
+        "importance": "High",
+        "current_status": "Partial",
+        "action": "Implement e-Faktur, privacy compliance, legal review"
+      },
+      {
+        "factor": "Customer Success",
+        "description": "Customers achieve ROI dan success dengan product",
+        "importance": "High",
+        "current_status": "To Be Built",
+        "action": "Build CS team, success metrics, proactive engagement"
+      }
+    ]
+  },
+  "risk_assessment": {
+    "title": "RISK ASSESSMENT",
+    "description": "Penilaian risiko dan mitigation plan",
+    "risks": [
+      {
+        "risk": "Gagal Achieve Product-Market Fit",
+        "probability": "Medium",
+        "impact": "Critical",
+        "risk_score": 9,
+        "mitigation": "Intensive user research, rapid iteration, pivot if needed",
+        "contingency": "Pivot to different target market or business model"
+      },
+      {
+        "risk": "Kalah Kompetisi dengan Established Players",
+        "probability": "High",
+        "impact": "High",
+        "risk_score": 9,
+        "mitigation": "Differentiation, niche focus, superior execution",
+        "contingency": "Acquisition by larger player, pivot to B2B2C"
+      },
+      {
+        "risk": "Kehabisan Cash Sebelum Profitable",
+        "probability": "Medium",
+        "impact": "Critical",
+        "risk_score": 9,
+        "mitigation": "Raise funding, manage burn rate, focus on revenue",
+        "contingency": "Bridge financing, cost cutting, strategic sale"
+      },
+      {
+        "risk": "High Customer Churn",
+        "probability": "Medium",
+        "impact": "High",
+        "risk_score": 6,
+        "mitigation": "Excellent onboarding, proactive support, continuous improvement",
+        "contingency": "Revise pricing, improve product, enhance support"
+      },
+      {
+        "risk": "Regulatory Changes",
+        "probability": "Medium",
+        "impact": "High",
+        "risk_score": 6,
+        "mitigation": "Proactive compliance, industry engagement, flexible architecture",
+        "contingency": "Quick adaptation, compliance features, legal support"
+      },
+      {
+        "risk": "Technology Failure / Downtime",
+        "probability": "Low",
+        "impact": "High",
+        "risk_score": 3,
+        "mitigation": "Redundancy, monitoring, incident response, offline mode",
+        "contingency": "Disaster recovery, customer communication, compensation"
+      },
+      {
+        "risk": "Security Breach",
+        "probability": "Low",
+        "impact": "Critical",
+        "risk_score": 3,
+        "mitigation": "Security best practices, regular audit, cyber insurance",
+        "contingency": "Incident response, transparent communication, remediation"
+      },
+      {
+        "risk": "Key Team Member Loss",
+        "probability": "Medium",
+        "impact": "Medium",
+        "risk_score": 4,
+        "mitigation": "Competitive compensation, good culture, knowledge sharing",
+        "contingency": "Succession planning, quick hiring, consultant backup"
+      },
+      {
+        "risk": "Economic Downturn",
+        "probability": "Medium",
+        "impact": "Medium",
+        "risk_score": 4,
+        "mitigation": "Flexible pricing, focus on ROI, diversify segments",
+        "contingency": "Cost cutting, pricing adjustment, pivot to essentials"
+      },
+      {
+        "risk": "Platform Dependency Issues",
+        "probability": "Low",
+        "impact": "Medium",
+        "risk_score": 2,
+        "mitigation": "Abstraction layer, multi-cloud, self-hosted option",
+        "contingency": "Migration plan, alternative platforms, custom infrastructure"
+      }
+    ],
+    "overall_risk_level": "Medium-High",
+    "risk_management_strategy": "Proactive mitigation, continuous monitoring, agile response"
+  },
+  "financial_projections": {
+    "title": "PROYEKSI KEUANGAN (5 Tahun)",
+    "description": "Conservative financial projections",
+    "assumptions": {
+      "free_plan": "100 produk, 1 kasir, basic features",
+      "business_plan": "Rp 99,000/bulan, unlimited produk, 5 kasir",
+      "enterprise_plan": "Rp 299,000/bulan, unlimited everything, priority support",
+      "conversion_rate": "20% free to paid",
+      "monthly_churn": "5%",
+      "cac": "Rp 500,000",
+      "ltv": "Rp 2,000,000 (20 months average)"
+    },
+    "year_1": {
+      "users": 10000,
+      "paying_customers": 1000,
+      "mrr": "Rp 100,000,000",
+      "arr": "Rp 1,200,000,000",
+      "revenue": "Rp 1,200,000,000",
+      "costs": "Rp 2,000,000,000",
+      "profit": "-Rp 800,000,000",
+      "burn_rate": "Rp 67,000,000/bulan"
+    },
+    "year_2": {
+      "users": 50000,
+      "paying_customers": 5000,
+      "mrr": "Rp 500,000,000",
+      "arr": "Rp 6,000,000,000",
+      "revenue": "Rp 6,000,000,000",
+      "costs": "Rp 5,000,000,000",
+      "profit": "Rp 1,000,000,000",
+      "burn_rate": "Break-even"
+    },
+    "year_3": {
+      "users": 150000,
+      "paying_customers": 15000,
+      "mrr": "Rp 1,500,000,000",
+      "arr": "Rp 18,000,000,000",
+      "revenue": "Rp 18,000,000,000",
+      "costs": "Rp 12,000,000,000",
+      "profit": "Rp 6,000,000,000",
+      "margin": "33%"
+    },
+    "year_4": {
+      "users": 300000,
+      "paying_customers": 30000,
+      "mrr": "Rp 3,000,000,000",
+      "arr": "Rp 36,000,000,000",
+      "revenue": "Rp 36,000,000,000",
+      "costs": "Rp 20,000,000,000",
+      "profit": "Rp 16,000,000,000",
+      "margin": "44%"
+    },
+    "year_5": {
+      "users": 500000,
+      "paying_customers": 50000,
+      "mrr": "Rp 5,000,000,000",
+      "arr": "Rp 60,000,000,000",
+      "revenue": "Rp 60,000,000,000",
+      "costs": "Rp 30,000,000,000",
+      "profit": "Rp 30,000,000,000",
+      "margin": "50%"
+    },
+    "valuation_potential": {
+      "year_3": "Rp 180 Miliar (10x ARR)",
+      "year_5": "Rp 600 Miliar (10x ARR)",
+      "exit_potential": "Rp 1-2 Triliun (IPO or acquisition)"
+    }
+  },
+  "conclusion": {
+    "title": "KESIMPULAN",
+    "summary": "BetaKasir memiliki potensi besar untuk menjadi pemain signifikan di pasar POS Indonesia yang bernilai triliunan rupiah. Dengan 64 juta UMKM dan penetrasi POS digital yang masih rendah (<10%), opportunity window sangat besar.",
+    "key_strengths": [
+      "Teknologi modern dan multi-platform",
+      "Fitur lengkap dan kompetitif",
+      "Offline-first architecture untuk pasar Indonesia",
+      "Freemium model untuk market penetration"
+    ],
+    "key_challenges": [
+      "Kompetisi dengan established players",
+      "Brand awareness dan customer acquisition",
+      "Need for funding untuk scale",
+      "Regulatory compliance (pajak, privacy)"
+    ],
+    "success_probability": "Medium-High (60-70%)",
+    "recommendation": "GO - dengan catatan: focus pada product-market fit, raise seed funding, build strong team, dan execute dengan cepat",
+    "critical_next_steps": [
+      "Launch di Play Store & App Store (Q1 2025)",
+      "Achieve 1,000 paying customers (Q2 2025)",
+      "Raise seed funding $500K-1M (Q3 2025)",
+      "Reach Rp 100 juta MRR (Q4 2025)",
+      "Build team 10-15 people (2025)"
+    ],
+    "final_note": "Timing is critical. Pasar POS Indonesia sedang booming, tapi window of opportunity tidak akan terbuka selamanya. Execution speed dan focus adalah kunci kesuksesan."
+  }
+}

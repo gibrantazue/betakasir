@@ -1,0 +1,95 @@
+[
+  {
+    "version": "1.2.2",
+    "date": "2025-01-24",
+    "title": "Security & Performance Update",
+    "description": "Update v1.2.2 fokus pada keamanan, performa, dan type safety. Perbaikan kritis untuk API keys, mobile export, dan optimasi Firestore.",
+    "type": "patch",
+    "changes": [
+      {
+        "category": "security",
+        "text": "Pindahkan semua API keys ke environment variables (Firebase, Gemini, OpenRouter, HuggingFace, DeepSeek)"
+      },
+      {
+        "category": "security",
+        "text": "Update admin credentials dengan password yang lebih kuat"
+      },
+      {
+        "category": "security",
+        "text": "Tambah dokumentasi keamanan lengkap (SECURITY.md)"
+      },
+      {
+        "category": "security",
+        "text": "Buat template production environment (.env.production.example)"
+      },
+      {
+        "category": "bugfix",
+        "text": "Fix mobile export functionality - migrate ke FileSystem API v54"
+      },
+      {
+        "category": "bugfix",
+        "text": "Fix mobile backup functionality dengan proper file sharing"
+      },
+      {
+        "category": "bugfix",
+        "text": "Fix storage quota exceeded dengan auto-clear cache mechanism"
+      },
+      {
+        "category": "bugfix",
+        "text": "Fix Electron icon path validation dan error handling"
+      },
+      {
+        "category": "performance",
+        "text": "Optimize Firestore realtime listeners - reduce reads hingga 80%"
+      },
+      {
+        "category": "performance",
+        "text": "Implementasi caching untuk seller stats (5 menit cache)"
+      },
+      {
+        "category": "performance",
+        "text": "Auto-clear cache saat storage penuh untuk prevent errors"
+      },
+      {
+        "category": "improvement",
+        "text": "Replace 40+ 'any' types dengan proper TypeScript types"
+      },
+      {
+        "category": "improvement",
+        "text": "Tambah type definitions lengkap (src/types/reports.ts)"
+      },
+      {
+        "category": "improvement",
+        "text": "Better error handling di semua services"
+      },
+      {
+        "category": "improvement",
+        "text": "Improve type safety di storage utilities dengan generic types"
+      },
+      {
+        "category": "improvement",
+        "text": "Better fallback mechanism untuk file operations"
+      },
+      {
+        "category": "improvement",
+        "text": "Perbaikan layout dashboard laporan - card lebih rapih dan tidak terpotong"
+      },
+      {
+        "category": "improvement",
+        "text": "Improve spacing dan padding untuk better readability"
+      },
+      {
+        "category": "improvement",
+        "text": "Optimize chart section layout dengan consistent spacing"
+      },
+      {
+        "category": "bugfix",
+        "text": "Fix print preview error di Electron - gunakan native print API"
+      },
+      {
+        "category": "improvement",
+        "text": "Implementasi silent printing untuk struk kasir di desktop"
+      }
+    ]
+  }
+]

@@ -1,0 +1,375 @@
+{
+  "campaign": {
+    "name": "BetaKasir - Kasir Pintar untuk Bisnis Modern",
+    "tagline": "Kelola toko. Lebih mudah. Lebih untung.",
+    "style": "Apple-inspired: Minimalist, Elegant, Premium",
+    "target_audience": "UMKM, Toko Retail, Minimarket, Warung Modern",
+    "tone": "Aspirational, Simple, Confident, Human"
+  },
+
+  "hero_ads": [
+    {
+      "id": "hero_01",
+      "title": "Kelola toko.\nLebih mudah.",
+      "subtitle": "BetaKasir",
+      "visual": {
+        "type": "product_shot",
+        "description": "Close-up layar tablet menampilkan dashboard BetaKasir yang clean dan modern dengan grafik penjualan real-time",
+        "background": "Pure white dengan subtle shadow",
+        "color_accent": "#007AFF"
+      },
+      "cta": "Coba Gratis 14 Hari",
+      "message": "Semua yang Anda butuhkan untuk mengelola bisnis. Dalam satu aplikasi."
+    },
+    {
+      "id": "hero_02",
+      "title": "Stok habis?\nKetahui sebelum pelanggan tanya.",
+      "subtitle": "Notifikasi Pintar BetaKasir",
+      "visual": {
+        "type": "notification_mockup",
+        "description": "Notifikasi elegan muncul di layar: 'Stok Indomie Goreng tinggal 5. Saatnya restock?'",
+        "background": "Gradient soft blue ke white",
+        "animation": "Gentle fade-in notification"
+      },
+      "cta": "Mulai Sekarang",
+      "message": "Bisnis lancar. Pelanggan senang. Anda tenang."
+    },
+    {
+      "id": "hero_03",
+      "title": "Laporan lengkap.\nTanpa ribet.",
+      "subtitle": "BetaKasir Analytics",
+      "visual": {
+        "type": "dashboard_view",
+        "description": "Dashboard finansial dengan chart minimalis menampilkan profit, revenue, dan trend penjualan",
+        "background": "Light gray dengan card shadows",
+        "color_scheme": "Monochrome dengan accent hijau untuk profit"
+      },
+      "cta": "Lihat Demo",
+      "message": "Dari penjualan hingga profit. Semua data penting, satu layar."
+    }
+  ],
+
+  "feature_highlights": [
+    {
+      "id": "feature_01",
+      "icon": "📊",
+      "title": "Dashboard Real-time",
+      "description": "Pantau penjualan, stok, dan profit secara langsung. Kapan saja, di mana saja.",
+      "visual_style": "Icon besar dengan single color, text minimal"
+    },
+    {
+      "id": "feature_02",
+      "icon": "🔔",
+      "title": "Notifikasi Proaktif",
+      "description": "Stok menipis? Produk laris? BetaKasir memberi tahu sebelum jadi masalah.",
+      "visual_style": "Animated notification bell"
+    },
+    {
+      "id": "feature_03",
+      "icon": "🤖",
+      "title": "AI Assistant",
+      "description": "Tanya apa saja tentang bisnis Anda. Dapat insight dan rekomendasi cerdas.",
+      "visual_style": "Chat bubble dengan AI response"
+    },
+    {
+      "id": "feature_04",
+      "icon": "📱",
+      "title": "Multi-Platform",
+      "description": "Desktop, tablet, atau smartphone. Sinkron otomatis di semua perangkat.",
+      "visual_style": "Device mockups in harmony"
+    },
+    {
+      "id": "feature_05",
+      "icon": "🔒",
+      "title": "Aman & Terpercaya",
+      "description": "Data terenkripsi. Backup otomatis. Bisnis Anda aman bersama kami.",
+      "visual_style": "Shield icon dengan checkmark"
+    },
+    {
+      "id": "feature_06",
+      "icon": "⚡",
+      "title": "Cepat & Responsif",
+      "description": "Transaksi dalam hitungan detik. Tidak ada lag. Tidak ada tunggu.",
+      "visual_style": "Lightning bolt dengan speed lines"
+    }
+  ],
+
+  "social_proof": [
+    {
+      "type": "testimonial",
+      "quote": "Sejak pakai BetaKasir, saya bisa fokus jualan. Urusan stok dan laporan sudah otomatis.",
+      "author": "Ibu Siti",
+      "business": "Warung Berkah, Jakarta",
+      "visual": "Portrait photo dengan quote overlay"
+    },
+    {
+      "type": "testimonial",
+      "quote": "Notifikasi stok menipis sangat membantu. Pelanggan tidak pernah kecewa lagi.",
+      "author": "Pak Budi",
+      "business": "Minimarket Sejahtera, Bandung",
+      "visual": "Store front dengan owner"
+    },
+    {
+      "type": "stat",
+      "number": "10,000+",
+      "label": "Toko Mempercayai BetaKasir",
+      "visual": "Large number dengan subtle animation"
+    },
+    {
+      "type": "stat",
+      "number": "99.9%",
+      "label": "Uptime Reliability",
+      "visual": "Percentage dengan checkmark"
+    }
+  ],
+
+  "pricing_teaser": {
+    "headline": "Mulai dari Rp 49.000/bulan",
+    "subheadline": "Gratis 14 hari. Tidak perlu kartu kredit.",
+    "plans_preview": [
+      {
+        "name": "Starter",
+        "price": "Rp 49.000",
+        "period": "/bulan",
+        "highlight": "Sempurna untuk warung & toko kecil",
+        "key_features": [
+          "1 Kasir",
+          "Unlimited Produk",
+          "Laporan Dasar",
+          "Support Chat"
+        ]
+      },
+      {
+        "name": "Pro",
+        "price": "Rp 149.000",
+        "period": "/bulan",
+        "highlight": "Untuk bisnis yang berkembang",
+        "badge": "Paling Populer",
+        "key_features": [
+          "5 Kasir",
+          "AI Assistant",
+          "Notifikasi Pintar",
+          "Multi-Device",
+          "Priority Support"
+        ]
+      },
+      {
+        "name": "Business",
+        "price": "Rp 299.000",
+        "period": "/bulan",
+        "highlight": "Solusi lengkap untuk bisnis besar",
+        "key_features": [
+          "Unlimited Kasir",
+          "Advanced Analytics",
+          "Custom Integration",
+          "Dedicated Support",
+          "Training & Onboarding"
+        ]
+      }
+    ],
+    "cta": "Lihat Semua Paket",
+    "visual_style": "Card-based layout dengan hover effects"
+  },
+
+  "call_to_action": {
+    "primary": {
+      "text": "Coba Gratis 14 Hari",
+      "url": "https://betakasir.com/trial",
+      "style": "Large blue button dengan subtle shadow"
+    },
+    "secondary": {
+      "text": "Lihat Demo",
+      "url": "https://betakasir.com/demo",
+      "style": "Outline button"
+    },
+    "footer_message": "Bergabunglah dengan ribuan pemilik toko yang sudah berkembang bersama BetaKasir."
+  },
+
+  "ad_variations": {
+    "instagram_story": {
+      "format": "9:16 vertical",
+      "duration": "15 seconds",
+      "scenes": [
+        {
+          "time": "0-3s",
+          "content": "Logo BetaKasir fade in dengan tagline",
+          "text": "Kelola toko. Lebih mudah."
+        },
+        {
+          "time": "3-8s",
+          "content": "Quick demo: Dashboard → Notifikasi → Laporan",
+          "text": "Semua dalam satu aplikasi"
+        },
+        {
+          "time": "8-12s",
+          "content": "Testimonial singkat dengan foto toko",
+          "text": "\"Sangat membantu!\" - 10,000+ toko"
+        },
+        {
+          "time": "12-15s",
+          "content": "CTA dengan promo",
+          "text": "Gratis 14 hari. Swipe up!"
+        }
+      ]
+    },
+    "facebook_feed": {
+      "format": "1:1 square",
+      "image": "Dashboard screenshot dengan overlay text",
+      "headline": "Stok habis? Ketahui sebelum pelanggan tanya.",
+      "body": "BetaKasir memberi notifikasi pintar saat stok menipis. Bisnis lancar, pelanggan senang. Coba gratis 14 hari!",
+      "cta_button": "Coba Sekarang"
+    },
+    "google_search": {
+      "headline_1": "Aplikasi Kasir Pintar - BetaKasir",
+      "headline_2": "Kelola Toko Lebih Mudah & Untung",
+      "headline_3": "Gratis 14 Hari - Tanpa Kartu Kredit",
+      "description_1": "Dashboard real-time, notifikasi pintar, AI assistant. Semua yang Anda butuhkan untuk bisnis modern. Coba gratis!",
+      "description_2": "10,000+ toko mempercayai BetaKasir. Mulai dari Rp 49.000/bulan. Support 24/7. Daftar sekarang!",
+      "display_url": "betakasir.com/Gratis-14-Hari"
+    },
+    "youtube_pre_roll": {
+      "format": "16:9 horizontal",
+      "duration": "6 seconds (skippable) / 15 seconds (non-skippable)",
+      "script_6s": "Kelola toko lebih mudah dengan BetaKasir. Dashboard pintar, notifikasi otomatis. Coba gratis!",
+      "script_15s": "Pusing urus stok dan laporan? BetaKasir solusinya. Dashboard real-time, notifikasi pintar saat stok menipis, laporan lengkap otomatis. 10,000+ toko sudah pakai. Coba gratis 14 hari di betakasir.com",
+      "visual": "Split screen: Toko sibuk vs Owner santai pakai BetaKasir"
+    }
+  },
+
+  "design_guidelines": {
+    "colors": {
+      "primary": "#007AFF",
+      "secondary": "#5856D6",
+      "success": "#34C759",
+      "background": "#FFFFFF",
+      "text_primary": "#000000",
+      "text_secondary": "#8E8E93"
+    },
+    "typography": {
+      "headline": "SF Pro Display, Bold, 48-72pt",
+      "subheadline": "SF Pro Display, Semibold, 24-36pt",
+      "body": "SF Pro Text, Regular, 16-18pt",
+      "caption": "SF Pro Text, Regular, 12-14pt"
+    },
+    "spacing": {
+      "principle": "Generous whitespace",
+      "padding": "24px minimum",
+      "section_gap": "80-120px"
+    },
+    "imagery": {
+      "style": "Clean product shots, real people, authentic stores",
+      "treatment": "Bright, high contrast, minimal shadows",
+      "avoid": "Stock photos, cluttered backgrounds, too many elements"
+    },
+    "animation": {
+      "principle": "Subtle and purposeful",
+      "duration": "0.3-0.5s",
+      "easing": "ease-in-out",
+      "examples": "Fade in, slide up, gentle scale"
+    }
+  },
+
+  "copywriting_principles": {
+    "voice": [
+      "Simple: Gunakan bahasa sehari-hari, hindari jargon",
+      "Confident: Yakin tanpa arogan",
+      "Human: Bicara seperti teman, bukan robot",
+      "Aspirational: Tunjukkan masa depan yang lebih baik"
+    ],
+    "structure": [
+      "Headline: Benefit-focused, maksimal 6 kata",
+      "Subheadline: Elaborasi singkat, 1 kalimat",
+      "Body: Fokus pada solusi, bukan fitur",
+      "CTA: Action-oriented, jelas dan mendesak"
+    ],
+    "dos": [
+      "Gunakan 'Anda' untuk personal touch",
+      "Fokus pada outcome, bukan proses",
+      "Tunjukkan empati terhadap pain points",
+      "Gunakan angka spesifik (10,000+ toko, 14 hari)"
+    ],
+    "donts": [
+      "Jangan oversell atau hiperbola",
+      "Hindari klaim yang tidak bisa dibuktikan",
+      "Jangan gunakan terlalu banyak emoji",
+      "Hindari kalimat panjang dan kompleks"
+    ]
+  },
+
+  "campaign_metrics": {
+    "kpis": [
+      {
+        "metric": "CTR (Click-Through Rate)",
+        "target": ">3%",
+        "benchmark": "Industry average: 1.9%"
+      },
+      {
+        "metric": "Conversion Rate",
+        "target": ">5%",
+        "benchmark": "SaaS average: 3-5%"
+      },
+      {
+        "metric": "Cost Per Acquisition",
+        "target": "<Rp 500,000",
+        "benchmark": "Lifetime value: Rp 2,000,000+"
+      },
+      {
+        "metric": "Trial Sign-ups",
+        "target": "500/month",
+        "benchmark": "Current: 200/month"
+      }
+    ],
+    "tracking": {
+      "utm_parameters": "utm_source, utm_medium, utm_campaign, utm_content",
+      "conversion_events": [
+        "Trial signup",
+        "Demo request",
+        "Pricing page view",
+        "Feature page engagement"
+      ]
+    }
+  },
+
+  "a_b_testing": {
+    "test_1": {
+      "element": "Headline",
+      "variant_a": "Kelola toko. Lebih mudah.",
+      "variant_b": "Aplikasi kasir yang bikin bisnis lebih untung.",
+      "hypothesis": "Benefit-focused headline akan perform lebih baik"
+    },
+    "test_2": {
+      "element": "CTA Button",
+      "variant_a": "Coba Gratis 14 Hari",
+      "variant_b": "Mulai Sekarang",
+      "hypothesis": "Specific offer akan meningkatkan conversion"
+    },
+    "test_3": {
+      "element": "Social Proof",
+      "variant_a": "10,000+ toko mempercayai BetaKasir",
+      "variant_b": "Testimonial dengan foto owner",
+      "hypothesis": "Personal testimonial lebih persuasif"
+    }
+  },
+
+  "launch_checklist": [
+    "✅ Finalisasi copy untuk semua ad variations",
+    "✅ Design assets (hero images, icons, mockups)",
+    "✅ Setup landing page dengan A/B testing",
+    "✅ Configure tracking pixels (Facebook, Google)",
+    "✅ Prepare UTM parameters untuk semua campaigns",
+    "✅ Setup conversion tracking di analytics",
+    "✅ Create retargeting audiences",
+    "✅ Prepare email follow-up sequences",
+    "✅ Brief customer support team tentang campaign",
+    "✅ Set budget allocation per channel",
+    "✅ Schedule ads untuk optimal timing",
+    "✅ Prepare weekly reporting dashboard"
+  ],
+
+  "notes": {
+    "inspiration": "Apple product launches, Stripe marketing, Notion campaigns",
+    "key_differentiator": "Proactive notifications + AI assistant untuk UMKM Indonesia",
+    "emotional_hook": "Dari stress dan chaos → tenang dan terkontrol",
+    "success_metric": "Not just sign-ups, but active users who see value"
+  }
+}
