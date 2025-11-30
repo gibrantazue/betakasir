@@ -1,9 +1,10 @@
 {
   "expo": {
     "name": "BetaKasir",
-    "slug": "betakasir",
+    "slug": "betakasir-ipad",
+    "owner": "syin",
     "version": "1.2.2",
-    "orientation": "portrait",
+    "orientation": "default",
     "userInterfaceStyle": "light",
     "splash": {
       "resizeMode": "contain",
@@ -15,8 +16,12 @@
     "ios": {
       "supportsTablet": true,
       "bundleIdentifier": "com.betakasir.app",
+      "requireFullScreen": false,
       "infoPlist": {
-        "ITSAppUsesNonExemptEncryption": false
+        "ITSAppUsesNonExemptEncryption": false,
+        "UIRequiresFullScreen": false,
+        "UIStatusBarHidden": false,
+        "UIViewControllerBasedStatusBarAppearance": true
       }
     },
     "android": {
@@ -24,13 +29,31 @@
         "backgroundColor": "#DC143C"
       },
       "package": "com.betakasir.app",
+      "googleServicesFile": "./google-services.json",
       "permissions": [
         "CAMERA",
         "WRITE_EXTERNAL_STORAGE",
         "READ_EXTERNAL_STORAGE",
         "android.permission.CAMERA",
         "android.permission.RECORD_AUDIO"
-      ]
+      ],
+      "jsEngine": "hermes",
+      "enableHermes": true,
+      "softwareKeyboardLayoutMode": "pan",
+      "userInterfaceStyle": "dark",
+      "androidStatusBar": {
+        "hidden": true,
+        "barStyle": "light-content",
+        "backgroundColor": "transparent",
+        "translucent": true
+      },
+      "androidNavigationBar": {
+        "visible": "immersive",
+        "barStyle": "light-content",
+        "backgroundColor": "transparent"
+      },
+      "intentFilters": [],
+      "allowBackup": false
     },
     "web": {
       "favicon": "./assets/favicon.png"
@@ -42,11 +65,14 @@
           "cameraPermission": "Allow BetaKasir to access your camera for scanning barcodes."
         }
       ],
-      "@react-native-google-signin/google-signin"
+      [
+        "@react-native-google-signin/google-signin"
+      ],
+      "expo-navigation-bar"
     ],
     "extra": {
       "eas": {
-        "projectId": "0bea0516-14d1-4f2e-8031-f95f1719a94d"
+        "projectId": "77007be3-4ce8-4515-b51c-ee0a12603afc"
       }
     }
   }

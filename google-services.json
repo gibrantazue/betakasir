@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "424861148877",
+    "project_id": "betakasir",
+    "storage_bucket": "betakasir.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:424861148877:android:28e320ec39d0794276ab84",
+        "android_client_info": {
+          "package_name": "com.betakasir.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "424861148877-rj6su941f2dl6mr3u0rd7uapumdqof55.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.betakasir.app",
+            "certificate_hash": "051a6f16d989c77e122c9a5806bbe697b2bd5523"
+          }
+        },
+        {
+          "client_id": "424861148877-70jnki6aga9trvllunq65o0utigttdem.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDJtPW5PphoYKfNTqaGiZbBrV7cJwQw_5A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "424861148877-70jnki6aga9trvllunq65o0utigttdem.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "424861148877-iknehuiu7i8rmbo2bsvhg039au9f0bg8.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "BetaKasir",
+                "app_store_id": "1234567"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
