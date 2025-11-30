@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { View, Text, StyleSheet, TouchableOpacity, ScrollView, Dimensions, ActivityIndicator } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity, ScrollView, Dimensions, ActivityIndicator, Platform } from 'react-native';
 import { LineChart, BarChart, PieChart } from 'react-native-chart-kit';
 import { Ionicons } from '@expo/vector-icons';
 import { useTheme } from '../hooks/useTheme';
+import { useResponsive } from '../hooks/useResponsive';
+import { useNavigation } from '@react-navigation/native';
 import { formatCurrency } from '../utils/helpers';
 import { useStore } from '../store/useStore';
 import { subscribeToTransactions, getSellerUID } from '../services/dataService';
@@ -19,6 +21,8 @@ interface MonthlyData {
 
 export default function FinancialDashboard() {
   const { colors, isDark } = useTheme();
+  const { isDesktop } = useResponsive();
+  const navigation = useNavigation();
   const { transactions, employees } = useStore();
   const [selectedYear, setSelectedYear] = useState(new Date().getFullYear());
   const [selectedMonths, setSelectedMonths] = useState<number[]>([]);
@@ -239,6 +243,28 @@ export default function FinancialDashboard() {
     <View style={[styles.container, { backgroundColor: colors.background }]}>
       {/* Header */}
       <View style={[styles.header, { backgroundColor: colors.card, borderBottomColor: colors.border }]}>
+        {/* Back Button for Mobile Views Only */}
+        {!isDesktop && (
+          <TouchableOpacity 
+            style={styles.headerBackButton}
+            onPress={() => {
+              console.log('🔙 Back button pressed in FinancialDashboard');
+              if (Platform.OS === 'web' && typeof window !== 'undefined' && window.history) {
+                // Web: use browser history
+                window.history.back();
+              } else if (navigation && typeof navigation.goBack === 'function') {
+                // Mobile: use React Navigation
+                navigation.goBack();
+              } else {
+                console.warn('⚠️ Navigation not available');
+              }
+            }}
+            activeOpacity={0.7}
+          >
+            <Ionicons name="arrow-back" size={24} color={colors.text} />
+          </TouchableOpacity>
+        )}
+        
         <Text style={[styles.headerTitle, { color: colors.text }]}>PERFORMANCE DASHBOARD FINANCE</Text>
         <View style={styles.realtimeBadge}>
           <View style={styles.realtimeDot} />
@@ -359,18 +385,48 @@ export default function FinancialDashboard() {
             {/* Donut Chart */}
             <View style={[styles.chartCard, { backgroundColor: colors.card, borderColor: colors.border }]}>
               <Text style={[styles.chartLabel, { color: colors.textSecondary }]}>Masuk Vs Keluar</Text>
-              <PieChart
-                data={pieChartData}
-                width={screenWidth * 0.22}
-                height={180}
-                chartConfig={chartConfig}
-                accessor="population"
-                backgroundColor="transparent"
-                paddingLeft="15"
-                center={[0, 0]}
-                hasLegend={true}
-                absolute={false}
-              />
+              <View style={styles.pieChartContainer}>
+                <View style={styles.pieChartWrapper}>
+                  <PieChart
+                    data={pieChartData}
+                    width={screenWidth * 0.24}
+                    height={180}
+                    chartConfig={chartConfig}
+                    accessor="population"
+                    backgroundColor="transparent"
+                    paddingLeft="20"
+                    center={[10, 0]}
+                    hasLegend={false}
+                    absolute={false}
+                  />
+                </View>
+                {/* Percentage Display Below Chart */}
+                <View style={styles.percentageRow}>
+                  <View style={styles.percentageItem}>
+                    <View style={[styles.percentageDot, { backgroundColor: isDark ? '#4BC0C0' : '#00897B' }]} />
+                    <Text style={[styles.percentageLabel, { color: colors.text }]}>
+                      {Math.round((totalKasMasuk / (totalKasMasuk + totalKasKeluar || 1)) * 100)}%
+                    </Text>
+                  </View>
+                  <View style={styles.percentageItem}>
+                    <View style={[styles.percentageDot, { backgroundColor: isDark ? '#FFCE56' : '#F57C00' }]} />
+                    <Text style={[styles.percentageLabel, { color: colors.text }]}>
+                      {Math.round((totalKasKeluar / (totalKasMasuk + totalKasKeluar || 1)) * 100)}%
+                    </Text>
+                  </View>
+                </View>
+                {/* Custom Legend */}
+                <View style={styles.customLegend}>
+                  <View style={styles.legendItem}>
+                    <View style={[styles.legendDot, { backgroundColor: isDark ? '#4BC0C0' : '#00897B' }]} />
+                    <Text style={[styles.legendText, { color: colors.text }]}>Masuk</Text>
+                  </View>
+                  <View style={styles.legendItem}>
+                    <View style={[styles.legendDot, { backgroundColor: isDark ? '#FFCE56' : '#F57C00' }]} />
+                    <Text style={[styles.legendText, { color: colors.text }]}>Keluar</Text>
+                  </View>
+                </View>
+              </View>
             </View>
 
             {/* Saldo Card */}
@@ -720,11 +776,16 @@ const styles = StyleSheet.create({
     paddingVertical: 16,
     paddingHorizontal: 24,
     borderBottomWidth: 1,
+    gap: 12,
+  },
+  headerBackButton: {
+    padding: 4,
   },
   headerTitle: {
     fontSize: 20,
     fontWeight: '700',
     letterSpacing: 0.5,
+    flex: 1,
   },
   realtimeBadge: {
     flexDirection: 'row',
@@ -1016,5 +1077,58 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     paddingVertical: 40,
+  },
+  pieChartContainer: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    paddingVertical: 12,
+  },
+  pieChartWrapper: {
+    overflow: 'visible',
+    alignItems: 'center',
+    justifyContent: 'center',
+    paddingHorizontal: 20,
+    paddingVertical: 10,
+  },
+  percentageRow: {
+    flexDirection: 'row',
+    justifyContent: 'center',
+    gap: 24,
+    marginTop: 12,
+    marginBottom: 4,
+  },
+  percentageItem: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 6,
+  },
+  percentageDot: {
+    width: 10,
+    height: 10,
+    borderRadius: 5,
+  },
+  percentageLabel: {
+    fontSize: 14,
+    fontWeight: '700',
+  },
+  customLegend: {
+    flexDirection: 'row',
+    justifyContent: 'center',
+    gap: 20,
+    marginTop: 12,
+  },
+  legendItem: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 6,
+  },
+  legendDot: {
+    width: 12,
+    height: 12,
+    borderRadius: 6,
+  },
+  legendText: {
+    fontSize: 12,
+    fontWeight: '600',
   },
 });
